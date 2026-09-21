@@ -38,7 +38,7 @@ export default function Home() {
             <div className="aspect-[.86] rotate-3 rounded-[2.5rem] bg-[#1b211e] p-4 shadow-2xl shadow-[#1b211e]/20 sm:p-5">
               <div className="relative flex h-full -rotate-3 flex-col overflow-hidden rounded-4xl bg-[#101512] p-5 sm:p-6">
                 <div className="absolute -right-16 -top-16 size-48 rounded-full bg-[#ff5c35]/15 blur-2xl" />
-                <div className="relative z-10 flex items-start justify-between"><span className="rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">TESTADO</span><span className="font-serif text-4xl italic text-[#ff5c35]">01</span></div>
+                <span className="relative z-10 self-start rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">POR TRÁS DOS TESTES</span>
                 <div className="relative z-10 mx-auto my-auto aspect-square w-full max-w-88 overflow-hidden rounded-full border-8 border-[#ff5c35]/25 shadow-[0_0_45px_rgba(255,92,53,0.25)]">
                   <Image src="/perfil-valent.png" alt="Valent, criador do Valent Shop" fill sizes="(min-width: 1024px) 22rem, 80vw" className="object-contain" priority />
                 </div>
@@ -50,7 +50,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <span className="absolute -bottom-5 -left-5 -rotate-12 rounded-full bg-[#ffe772] px-5 py-3 text-sm font-black shadow-lg">testes reais ✓</span>
           </div>
         </div>
       </section>
