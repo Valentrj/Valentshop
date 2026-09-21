@@ -34,7 +34,7 @@ export default async function ProductPage({
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
-        <div className={`${product.image.backgroundClass} relative mx-auto aspect-[3/4] w-full max-w-xl overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-[#1b211e]/15 sm:p-4`}>
+        <div className={`${product.image.backgroundClass} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-4xl p-3 shadow-2xl shadow-[#1b211e]/15 sm:p-4`}>
           <Image
             src={product.image.placeholder}
             alt={product.name}

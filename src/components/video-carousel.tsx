@@ -43,7 +43,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
     >
       <div className="overflow-hidden rounded-[1.7rem] bg-[#1b211e] text-white shadow-xl shadow-[#1b211e]/10">
         <article className="grid sm:grid-cols-[.9fr_1.1fr]">
-          <div className="relative aspect-[3/4] min-h-80">
+          <div className="relative aspect-3/4 min-h-80">
             <Image
               src={product.image.placeholder}
               alt={product.name}
