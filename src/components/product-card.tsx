@@ -13,7 +13,7 @@ type ProductCardProps = {
 export default function ProductCard({ product, index }: ProductCardProps) {
   return (
     <article className="group rounded-[1.7rem] bg-(--card) p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1b211e]/10">
-      <div className={`${product.image.backgroundClass} relative grid aspect-[3/4] place-items-center overflow-hidden rounded-[1.25rem]`}>
+      <div className={`${product.image.backgroundClass} relative grid aspect-3/4 place-items-center overflow-hidden rounded-[1.25rem]`}>
         <Image
           src={product.image.placeholder}
           alt={product.name}
@@ -27,7 +27,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         <p className="text-xs font-bold text-(--copy)">{product.category}</p>
         <h3 className="mt-1 text-xl font-black tracking-[-.04em]">{product.name}</h3>
         <p className="mt-1 text-sm leading-relaxed text-(--copy)">{product.shortDescription}</p>
-        <a href={product.videoLink} className="mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a>
+        <a href={`/produtos/${product.id}`} className="mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a>
       </div>
     </article>
   );
