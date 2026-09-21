@@ -3,6 +3,12 @@ export type ProductImage = {
   backgroundClass: string;
 };
 
+export type ProductVideo = {
+  url: string;
+  label: string;
+  id?: string;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -12,6 +18,8 @@ export type Product = {
   price: string;
   productLink: string;
   videoLink: string;
+  videoId?: string;
+  videos?: ProductVideo[];
   status: string;
   featured?: boolean;
 };
@@ -26,6 +34,7 @@ export const products: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videoLink: "https://vt.tiktok.com/ZSq3sRd3a/",
+    videoId: "7683907696055029010",
     status: "Testado",
     featured: true,
   },
@@ -38,6 +47,7 @@ export const products: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videoLink: "https://vt.tiktok.com/ZSq3s2sA2/",
+    videoId: "7687403075149122834",
     status: "Testado",
     featured: false,
   },
@@ -50,7 +60,71 @@ export const products: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videoLink: "https://vt.tiktok.com/ZSq3pcVut/",
+    videoId: "7683661754416499975",
     status: "Testado",
     featured: false,
+  },
+  {
+    id: "ventilador-com-luz-led-42cm",
+    name: "Ventilador com Luz LED 42cm",
+    category: "Casa",
+    image: { placeholder: "/produtos/ventilador.jpg", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Testei a ventilação, a iluminação e os recursos do controle remoto.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videoLink: "https://vt.tiktok.com/ZSq3Tf14k/",
+    videos: [
+      { url: "https://vt.tiktok.com/ZSq3Tf14k/", label: "Instalação", id: "7681411886390332690" },
+      { url: "https://vt.tiktok.com/ZSq3wFS8Y/", label: "Unboxing", id: "7681371788571315464" },
+    ],
+    status: "Status não informado",
+  },
+  {
+    id: "aspirador-de-po-portatil",
+    name: "Aspirador de Pó Portátil",
+    category: "Casa",
+    image: { placeholder: "/produtos/aspirador-portatil.jpg", backgroundClass: "bg-[#ffd8be]" },
+    shortDescription: "Testei a sucção, a praticidade e a limpeza em diferentes superfícies.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videoLink: "https://vt.tiktok.com/ZSq3TqMQR/",
+    videoId: "7680246927300103432",
+    status: "Status não informado",
+  },
+  {
+    id: "kit-3-camisetas-oversized",
+    name: "Kit 3 Camisetas Oversized",
+    category: "Vestuário",
+    image: { placeholder: "/produtos/camisas-oversized.jpg", backgroundClass: "bg-[#dcd4ff]" },
+    shortDescription: "Testei o caimento, o tecido e o conforto das três camisetas.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videoLink: "https://vt.tiktok.com/ZSq3T7Maw/",
+    videoId: "7686593272818437383",
+    status: "Status não informado",
+  },
+  {
+    id: "mousepad-gamer",
+    name: "Mousepad Gamer",
+    category: "Acessórios / Games",
+    image: { placeholder: "/produtos/mousepad-gamer.jpg", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Testei o tamanho, a superfície e o deslizamento durante o uso.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videoLink: "https://vt.tiktok.com/ZSq3w4VkU/",
+    videoId: "7675516595359223048",
+    status: "Status não informado",
+  },
+  {
+    id: "pelicula-kingkong-glass",
+    name: "Película KingKong Glass",
+    category: "Eletrônicos / Acessórios",
+    image: { placeholder: "/produtos/pelicula-kingkong-glass.jpg", backgroundClass: "bg-[#ffd8be]" },
+    shortDescription: "Testei a aplicação, a cobertura da tela e a resistência no uso diário.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videoLink: "https://vt.tiktok.com/ZSq3wq95u/",
+    videoId: "7674444960367758600",
+    status: "Status não informado",
   },
 ];

@@ -16,6 +16,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const product = products[activeIndex];
+  const primaryVideo = product.videos?.[0]?.url ?? product.videoLink;
 
   function showSlide(index: number) {
     setActiveIndex((index + products.length) % products.length);
@@ -59,7 +60,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
             <h3 className="mt-3 max-w-lg text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{product.name}</h3>
             <p className="mt-4 max-w-md leading-relaxed text-[#c4cec8]">{product.shortDescription}</p>
             <a
-              href={product.videoLink}
+              href={primaryVideo}
               target="_blank"
               rel="noreferrer"
               className="mt-auto inline-flex items-center gap-1 pt-8 text-sm font-bold text-[#ff977d] underline underline-offset-4 transition hover:text-white"

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
+import ProductVideoShowcase from "@/components/product-video-showcase";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
@@ -19,6 +20,8 @@ export default async function ProductPage({
   if (!product) {
     notFound();
   }
+
+  const productVideos = product.videos ?? [{ url: product.videoLink, label: "Demonstração", id: product.videoId }];
 
   return (
     <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
@@ -70,6 +73,14 @@ export default async function ProductPage({
             <a href={product.videoLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#e34a27]">🎥 Ver demonstração no TikTok ↗</a>
             <a href={product.productLink} className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10">
+        <div>
+          <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">DEMONSTRAÇÃO</p>
+          <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja o produto em ação.</h2>
+          <ProductVideoShowcase videos={productVideos} />
         </div>
       </section>
 

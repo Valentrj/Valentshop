@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Link from "next/link";
+
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
 }
@@ -56,7 +58,7 @@ export default function Home() {
 
       <section id="achados" className="border-y border-(--border) bg-(--section) py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9 flex items-end justify-between gap-5"><div><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes.</p></div><a href="#" className="hidden text-sm font-bold underline underline-offset-4 sm:block">Ver todos os testes</a></div>
+          <div className="mb-9 flex items-end justify-between gap-5"><div><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes.</p></div><Link href="/produtos" className="hidden text-sm font-bold underline underline-offset-4 sm:block">Ver todos os testes</Link></div>
           <div className="grid gap-4 md:grid-cols-3">{products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}</div>
         </div>
       </section>
