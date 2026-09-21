@@ -1,8 +1,48 @@
 @import "tailwindcss";
 
-:root { --background: #faf8f4; --foreground: #1b211e; }
+:root {
+  --background: #faf8f4;
+  --foreground: #1b211e;
+  --page: #faf8f4;
+  --ink: #1b211e;
+  --muted: #53615b;
+  --copy: #66736d;
+  --border: #dedbd3;
+  --section: #fffdf9;
+  --card: #ffffff;
+}
+
+html[data-theme="dark"] {
+  --background: #101512;
+  --foreground: #f7f4ed;
+  --page: #101512;
+  --ink: #f7f4ed;
+  --muted: #c4cec8;
+  --copy: #aeb9b2;
+  --border: #354039;
+  --section: #161d19;
+  --card: #1d2722;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --background: #101512;
+    --foreground: #f7f4ed;
+    --page: #101512;
+    --ink: #f7f4ed;
+    --muted: #c4cec8;
+    --copy: #aeb9b2;
+    --border: #354039;
+    --section: #161d19;
+    --card: #1d2722;
+  }
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
-a { color: inherit; text-decoration: none; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; transition: background-color 200ms ease, color 200ms ease; }
+@layer base {
+  a { color: inherit; text-decoration: none; }
+}
 ::selection { background: #ffb59e; color: #1b211e; }
+
+main, main section, main article, main footer { transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
