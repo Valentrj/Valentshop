@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Product } from "@/data/products";
 
 function ArrowUpRight() {
@@ -13,7 +14,13 @@ export default function ProductCard({ product, index }: ProductCardProps) {
   return (
     <article className="group rounded-[1.7rem] bg-(--card) p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1b211e]/10">
       <div className={`${product.image.backgroundClass} relative grid aspect-[1.15] place-items-center overflow-hidden rounded-[1.25rem]`}>
-        <span className="text-7xl transition duration-300 group-hover:scale-110">{product.image.placeholder}</span>
+        <Image
+          src={product.image.placeholder}
+          alt={product.name}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-contain transition duration-300 group-hover:scale-110"
+        />
         <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e]">TESTE 0{index + 1}</span>
       </div>
       <div className="px-1 pb-2 pt-4">
