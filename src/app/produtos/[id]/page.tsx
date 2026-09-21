@@ -20,9 +20,6 @@ export default async function ProductPage({
     notFound();
   }
 
-  const videoLink = product.videoLink.trim();
-  const hasVideo = videoLink.length > 0 && !videoLink.startsWith("[");
-
   return (
     <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
@@ -36,8 +33,8 @@ export default async function ProductPage({
         </div>
       </header>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-16 lg:px-10">
-        <div className={`${product.image.backgroundClass} relative mx-auto aspect-[3/4] w-full max-w-lg overflow-hidden rounded-[2rem] p-4 shadow-2xl shadow-[#1b211e]/15`}>
+      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
+        <div className={`${product.image.backgroundClass} relative mx-auto aspect-[3/4] w-full max-w-xl overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-[#1b211e]/15 sm:p-4`}>
           <Image
             src={product.image.placeholder}
             alt={product.name}
@@ -49,39 +46,30 @@ export default async function ProductPage({
 
         <div className="max-w-xl">
           <Link href="/#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]">← Voltar para produtos</Link>
-          <p className="mt-8 text-xs font-black tracking-[.16em] text-[#ff5c35]">{product.status.toUpperCase()}</p>
-          <p className="mt-4 text-sm font-bold text-(--muted)">{product.category}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3 text-xs font-black tracking-[.16em]">
+            <p className="text-[#ff5c35]">{product.status.toUpperCase()}</p>
+            <span className="size-1 rounded-full bg-[#ff5c35]" />
+            <p className="text-(--muted)">{product.category.toUpperCase()}</p>
+          </div>
           <h1 className="mt-2 text-4xl font-black leading-[.95] tracking-[-.06em] sm:text-6xl">{product.name}</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-(--copy)">{product.shortDescription}</p>
+          <div className="mt-8 border-y border-(--border) py-5">
+            <h2 className="text-sm font-black tracking-[.12em]">CARACTERÍSTICAS</h2>
+            <dl className="mt-4 grid grid-cols-2 gap-4">
+              <div>
+                <dt className="text-xs font-bold text-(--muted)">Categoria</dt>
+                <dd className="mt-1 text-sm font-black">{product.category}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold text-(--muted)">Status</dt>
+                <dd className="mt-1 text-sm font-black">{product.status}</dd>
+              </div>
+            </dl>
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={product.videoLink} className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#e34a27]">Assistir demonstração</a>
+            <a href={product.videoLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#e34a27]">🎥 Ver demonstração no TikTok ↗</a>
             <a href={product.productLink} className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10">
-        <div className="mb-6">
-          <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">DEMONSTRAÇÃO</p>
-          <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja o produto em ação.</h2>
-        </div>
-        <div className="aspect-video overflow-hidden rounded-[1.7rem] bg-[#1b211e] shadow-xl shadow-[#1b211e]/10">
-          {hasVideo ? (
-            <iframe
-              src={videoLink}
-              title={`Demonstração de ${product.name}`}
-              className="size-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          ) : (
-            <div className="grid size-full place-items-center p-6 text-center text-white">
-              <div>
-                <p className="text-2xl font-black tracking-[-.04em] sm:text-3xl">Vídeo em breve</p>
-                <p className="mt-2 text-sm text-[#c4cec8]">A demonstração deste produto estará disponível em breve.</p>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

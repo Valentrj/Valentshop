@@ -1,7 +1,4 @@
-const videos = [
-  { duration: "08:42", label: "TESTEI POR 7 DIAS", title: "Vale mesmo ter uma cafeteira em casa?", color: "bg-[#e5e0d5]" },
-  { duration: "12:10", label: "DEMONSTRAÇÃO REAL", title: "O que eu usaria de novo depois do teste", color: "bg-[#bdd9d0]" },
-];
+import Image from "next/image";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
@@ -39,13 +36,21 @@ export default function Home() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <div className="aspect-[.86] rotate-3 rounded-[2.5rem] bg-[#1b211e] p-4 shadow-2xl shadow-[#1b211e]/20 sm:p-5">
-              <div className="flex h-full -rotate-3 flex-col rounded-4xl bg-[#d7f1e8] p-6">
-                <div className="flex items-start justify-between"><span className="rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">TESTADO</span><span className="font-serif text-4xl italic text-[#ff5c35]">01</span></div>
-                <div className="relative my-auto grid aspect-square place-items-center rounded-full border-14 border-(--page) bg-[#ffb59e] shadow-lg"><span className="text-8xl drop-shadow-md sm:text-9xl">☕</span><span className="absolute -right-5 bottom-4 grid size-14 place-items-center rounded-full bg-[#ff5c35] text-2xl text-white">▶</span></div>
-                <p className="mt-5 text-xs font-black tracking-[.14em] text-[#60766e]">TESTE EM VÍDEO</p><p className="mt-1 text-xl font-black tracking-tighter">Produto em uso, opinião sem roteiro.</p>
+              <div className="relative flex h-full -rotate-3 flex-col overflow-hidden rounded-4xl bg-[#101512] p-5 sm:p-6">
+                <div className="absolute -right-16 -top-16 size-48 rounded-full bg-[#ff5c35]/15 blur-2xl" />
+                <div className="relative z-10 flex items-start justify-between"><span className="rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">TESTADO</span><span className="font-serif text-4xl italic text-[#ff5c35]">01</span></div>
+                <div className="relative z-10 mx-auto my-auto aspect-square w-full max-w-[22rem] overflow-hidden rounded-full border-8 border-[#ff5c35]/25 shadow-[0_0_45px_rgba(255,92,53,0.25)]">
+                  <Image src="/perfil-valent.png" alt="Valent, criador do Valent Shop" fill sizes="(min-width: 1024px) 22rem, 80vw" className="object-contain" priority />
+                </div>
+                <div className="relative z-10 mt-5 flex flex-wrap gap-2 text-[10px] font-black tracking-wide text-white">
+                  <span className="rounded-full border border-[#ff5c35]/60 px-2.5 py-1.5 text-[#ffb59e]">@valentachados</span>
+                  <span className="rounded-full border border-white/15 px-2.5 py-1.5">11,4 mil seguidores</span>
+                  <span className="rounded-full border border-white/15 px-2.5 py-1.5">Testes reais</span>
+                  <span className="rounded-full border border-white/15 px-2.5 py-1.5">TikTok Shop</span>
+                </div>
               </div>
             </div>
-            <span className="absolute -bottom-5 -left-5 -rotate-12 rounded-full bg-[#ffe772] px-5 py-3 text-sm font-black shadow-lg">teste real ✓</span>
+            <span className="absolute -bottom-5 -left-5 -rotate-12 rounded-full bg-[#ffe772] px-5 py-3 text-sm font-black shadow-lg">testes reais ✓</span>
           </div>
         </div>
       </section>
@@ -57,7 +62,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="videos" className="py-16 sm:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10"><div className="mb-9"><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS DE DEMONSTRAÇÃO</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Testes de verdade,<br />sem roteiro de vendedor.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Vídeos reais mostrando os produtos em uso e o que eu achei de cada um.</p></div><div className="grid gap-5 lg:grid-cols-2">{videos.map((video) => <article className="group grid overflow-hidden rounded-[1.7rem] bg-[#1b211e] text-white sm:grid-cols-[.9fr_1.1fr]" key={video.title}><div className={`${video.color} relative grid min-h-56 place-items-center`}><div className="grid size-16 place-items-center rounded-full bg-[#ff5c35] pl-1 text-xl shadow-xl transition group-hover:scale-110">▶</div><span className="absolute bottom-4 left-4 rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black">{video.duration}</span></div><div className="flex flex-col p-6"><p className="text-[10px] font-black tracking-[.14em] text-[#ff977d]">{video.label}</p><h3 className="mt-3 text-2xl font-black leading-tight tracking-tighter">{video.title}</h3><a href="#" className="mt-auto pt-6 text-sm font-bold underline underline-offset-4">Assistir demonstração</a></div></article>)}</div></div></section>
+      <section id="videos" className="py-16 sm:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10"><div className="mb-9"><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS DE DEMONSTRAÇÃO</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja os produtos em ação.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Testes reais, mostrando os produtos como eles são.</p></div><VideoCarousel products={products} /></div></section>
 
       <section id="parcerias" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10"><div className="grid gap-8 rounded-4xl bg-[#ff5c35] p-7 text-white sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end"><div><p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]">PARA MARCAS E LOJAS</p><h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">Conteúdo que mostra seu produto de verdade.</h2></div><div><p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes de produtos, conteúdo para TikTok Shop e divulgação em vídeos e lives.</p><div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><span className="rounded-full border border-white/30 px-3 py-2">Demonstração</span><span className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</span><span className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</span></div><a href="mailto:oi@valentshop.com" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Falar sobre parceria <ArrowUpRight /></a></div></div></section>
 
@@ -66,5 +71,6 @@ export default function Home() {
   );
 }
 import ProductCard from "@/components/product-card";
+import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
 import ThemeToggle from "./theme-toggle";
