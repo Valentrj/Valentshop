@@ -1,9 +1,3 @@
-const products = [
-  { category: "Casa", name: "Luminária Aura", note: "Testei a luz, o acabamento e como ela funciona na rotina.", color: "bg-[#d7f1e8]", icon: "✦" },
-  { category: "Tecnologia", name: "Fone Studio Mini", note: "Mostrei o som e o conforto em uso no dia a dia.", color: "bg-[#ffd8be]", icon: "◒" },
-  { category: "Style", name: "Bolsa Daily", note: "Coloquei à prova o espaço, os detalhes e a praticidade.", color: "bg-[#dcd4ff]", icon: "◐" },
-];
-
 const videos = [
   { duration: "08:42", label: "TESTEI POR 7 DIAS", title: "Vale mesmo ter uma cafeteira em casa?", color: "bg-[#e5e0d5]" },
   { duration: "12:10", label: "DEMONSTRAÇÃO REAL", title: "O que eu usaria de novo depois do teste", color: "bg-[#bdd9d0]" },
@@ -59,7 +53,7 @@ export default function Home() {
       <section id="achados" className="border-y border-[var(--border)] bg-[var(--section)] py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-9 flex items-end justify-between gap-5"><div><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2><p className="mt-3 max-w-md leading-relaxed text-[var(--copy)]">Veja os produtos que já passaram pelos meus testes.</p></div><a href="#" className="hidden text-sm font-bold underline underline-offset-4 sm:block">Ver todos os testes</a></div>
-          <div className="grid gap-4 md:grid-cols-3">{products.map((product, index) => <article className="group rounded-[1.7rem] bg-[var(--card)] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1b211e]/10" key={product.name}><div className={`${product.color} relative grid aspect-[1.15] place-items-center overflow-hidden rounded-[1.25rem]`}><span className="text-7xl transition duration-300 group-hover:scale-110">{product.icon}</span><span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e]">TESTE 0{index + 1}</span></div><div className="px-1 pb-2 pt-4"><p className="text-xs font-bold text-[var(--copy)]">{product.category}</p><h3 className="mt-1 text-xl font-black tracking-[-.04em]">{product.name}</h3><p className="mt-1 text-sm leading-relaxed text-[var(--copy)]">{product.note}</p><a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a></div></article>)}</div>
+          <div className="grid gap-4 md:grid-cols-3">{products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}</div>
         </div>
       </section>
 
@@ -71,4 +65,6 @@ export default function Home() {
     </main>
   );
 }
+import ProductCard from "@/components/product-card";
+import { products } from "@/data/products";
 import ThemeToggle from "./theme-toggle";
