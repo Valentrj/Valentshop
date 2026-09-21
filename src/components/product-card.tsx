@@ -13,7 +13,7 @@ type ProductCardProps = {
 export default function ProductCard({ product, index }: ProductCardProps) {
   return (
     <article className="group rounded-[1.7rem] bg-(--card) p-4 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1b211e]/10">
-      <div className={`${product.image.backgroundClass} relative grid aspect-[1.15] place-items-center overflow-hidden rounded-[1.25rem]`}>
+      <div className={`${product.image.backgroundClass} relative grid aspect-[3/4] place-items-center overflow-hidden rounded-[1.25rem]`}>
         <Image
           src={product.image.placeholder}
           alt={product.name}
