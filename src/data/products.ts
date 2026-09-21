@@ -4,8 +4,8 @@ export type ProductImage = {
 };
 
 export type ProductVideo = {
-  url: string;
-  label: string;
+  title: string;
+  videoLink: string;
   id?: string;
 };
 
@@ -17,14 +17,13 @@ export type Product = {
   shortDescription: string;
   price: string;
   productLink: string;
-  videoLink: string;
-  videoId?: string;
-  videos?: ProductVideo[];
+  videos: ProductVideo[];
   status: string;
+  order: number;
   featured?: boolean;
 };
 
-export const products: Product[] = [
+const productList: Product[] = [
   {
     id: "luminaria-globo-led-galaxia",
     name: "Luminária Globo LED Galáxia",
@@ -33,9 +32,9 @@ export const products: Product[] = [
     shortDescription: "Testei o efeito de luz, o acabamento e a presença dela no ambiente.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3sRd3a/",
-    videoId: "7683907696055029010",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3sRd3a/", id: "7683907696055029010" }],
     status: "Testado",
+    order: 1,
     featured: true,
   },
   {
@@ -46,9 +45,9 @@ export const products: Product[] = [
     shortDescription: "Testei a iluminação, a instalação e o funcionamento em área externa.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3s2sA2/",
-    videoId: "7687403075149122834",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3s2sA2/", id: "7687403075149122834" }],
     status: "Testado",
+    order: 2,
     featured: false,
   },
   {
@@ -59,9 +58,9 @@ export const products: Product[] = [
     shortDescription: "Testei os níveis de luz, o toque e a praticidade na mesa.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3pcVut/",
-    videoId: "7683661754416499975",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3pcVut/", id: "7683661754416499975" }],
     status: "Testado",
+    order: 3,
     featured: false,
   },
   {
@@ -72,12 +71,12 @@ export const products: Product[] = [
     shortDescription: "Testei a ventilação, a iluminação e os recursos do controle remoto.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3Tf14k/",
     videos: [
-      { url: "https://vt.tiktok.com/ZSq3Tf14k/", label: "Instalação", id: "7681411886390332690" },
-      { url: "https://vt.tiktok.com/ZSq3oCFjV/", label: "Unboxing", id: "7681371788571315464" },
+      { title: "Instalação", videoLink: "https://vt.tiktok.com/ZSq3Tf14k/", id: "7681411886390332690" },
+      { title: "Unboxing", videoLink: "https://vt.tiktok.com/ZSq3oCFjV/", id: "7681371788571315464" },
     ],
     status: "Status não informado",
+    order: 4,
   },
   {
     id: "aspirador-de-po-portatil",
@@ -87,9 +86,9 @@ export const products: Product[] = [
     shortDescription: "Testei a sucção, a praticidade e a limpeza em diferentes superfícies.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3TqMQR/",
-    videoId: "7680246927300103432",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3TqMQR/", id: "7680246927300103432" }],
     status: "Status não informado",
+    order: 5,
   },
   {
     id: "kit-3-camisetas-oversized",
@@ -99,9 +98,9 @@ export const products: Product[] = [
     shortDescription: "Testei o caimento, o tecido e o conforto das três camisetas.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3T7Maw/",
-    videoId: "7686593272818437383",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3T7Maw/", id: "7686593272818437383" }],
     status: "Status não informado",
+    order: 6,
   },
   {
     id: "mousepad-gamer",
@@ -111,9 +110,9 @@ export const products: Product[] = [
     shortDescription: "Testei o tamanho, a superfície e o deslizamento durante o uso.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3w4VkU/",
-    videoId: "7675516595359223048",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3w4VkU/", id: "7675516595359223048" }],
     status: "Status não informado",
+    order: 7,
   },
   {
     id: "pelicula-kingkong-glass",
@@ -123,8 +122,10 @@ export const products: Product[] = [
     shortDescription: "Testei a aplicação, a cobertura da tela e a resistência no uso diário.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
-    videoLink: "https://vt.tiktok.com/ZSq3wq95u/",
-    videoId: "7674444960367758600",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3wq95u/", id: "7674444960367758600" }],
     status: "Status não informado",
+    order: 8,
   },
 ];
+
+export const products = [...productList].sort((first, second) => first.order - second.order);

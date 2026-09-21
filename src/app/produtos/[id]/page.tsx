@@ -23,10 +23,10 @@ export default async function ProductPage({
     notFound();
   }
 
-  const productVideos = product.videos ?? [{ url: product.videoLink, label: "Demonstração", id: product.videoId }];
+  const productVideos = product.videos;
 
   return (
-    <ProductVideoProvider initialVideoUrl={productVideos[0].url}>
+    <ProductVideoProvider initialVideoUrl={productVideos[0].videoLink}>
       <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Valent Shop, início">

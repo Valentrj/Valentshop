@@ -16,7 +16,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const product = products[activeIndex];
-  const primaryVideo = product.videos?.[0]?.url ?? product.videoLink;
+  const primaryVideo = product.videos[0]?.videoLink;
 
   function showSlide(index: number) {
     setActiveIndex((index + products.length) % products.length);
