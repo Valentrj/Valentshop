@@ -27,7 +27,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         <p className="text-xs font-bold text-(--copy)">{product.category}</p>
         <h3 className="mt-1 text-xl font-black tracking-[-.04em]">{product.name}</h3>
         <p className="mt-1 text-sm leading-relaxed text-(--copy)">{product.shortDescription}</p>
-        <a href={product.videoLink} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a>
+        <a href={`/produtos/${product.id}`} className="mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a>
       </div>
     </article>
   );

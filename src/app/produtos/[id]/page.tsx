@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 import ProductVideoShowcase from "@/components/product-video-showcase";
+import ProductVideoTopLink from "@/components/product-video-top-link";
+import { ProductVideoProvider } from "@/components/product-video-context";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
@@ -24,7 +26,8 @@ export default async function ProductPage({
   const productVideos = product.videos ?? [{ url: product.videoLink, label: "Demonstração", id: product.videoId }];
 
   return (
-    <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
+    <ProductVideoProvider initialVideoUrl={productVideos[0].url}>
+      <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Valent Shop, início">
           <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white">V</span>
@@ -36,7 +39,7 @@ export default async function ProductPage({
         </div>
       </header>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
+      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-8 pt-8 sm:px-8 sm:pb-12 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
         <div className={`${product.image.backgroundClass} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-4xl p-3 shadow-2xl shadow-[#1b211e]/15 sm:p-4`}>
           <Image
             src={product.image.placeholder}
@@ -70,7 +73,7 @@ export default async function ProductPage({
             </dl>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={product.videoLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#e34a27]">🎥 Ver demonstração no TikTok ↗</a>
+            <ProductVideoTopLink />
             <a href={product.productLink} className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
           </div>
         </div>
@@ -85,6 +88,7 @@ export default async function ProductPage({
       </section>
 
       <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
-    </main>
+      </main>
+    </ProductVideoProvider>
   );
 }

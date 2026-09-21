@@ -75,7 +75,7 @@ export const products: Product[] = [
     videoLink: "https://vt.tiktok.com/ZSq3Tf14k/",
     videos: [
       { url: "https://vt.tiktok.com/ZSq3Tf14k/", label: "Instalação", id: "7681411886390332690" },
-      { url: "https://vt.tiktok.com/ZSq3wFS8Y/", label: "Unboxing", id: "7681371788571315464" },
+      { url: "https://vt.tiktok.com/ZSq3oCFjV/", label: "Unboxing", id: "7681371788571315464" },
     ],
     status: "Status não informado",
   },
