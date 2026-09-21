@@ -19,7 +19,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
           alt={product.name}
           fill
           sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-contain transition duration-300 group-hover:scale-110"
+          className="object-cover transition duration-300 group-hover:scale-110"
         />
         <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e]">TESTE 0{index + 1}</span>
       </div>
