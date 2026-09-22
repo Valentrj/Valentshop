@@ -34,7 +34,7 @@ const productList: Product[] = [
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3sRd3a/", id: "7683907696055029010" }],
     status: "Testado",
-    order: 1,
+    order: 4,
     featured: true,
   },
   {
@@ -75,8 +75,8 @@ const productList: Product[] = [
       { title: "Instalação", videoLink: "https://vt.tiktok.com/ZSq3Tf14k/", id: "7681411886390332690" },
       { title: "Unboxing", videoLink: "https://vt.tiktok.com/ZSq3oCFjV/", id: "7681371788571315464" },
     ],
-    status: "Status não informado",
-    order: 4,
+    status: "Testado",
+    order: 1,
   },
   {
     id: "aspirador-de-po-portatil",
@@ -87,7 +87,7 @@ const productList: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3TqMQR/", id: "7680246927300103432" }],
-    status: "Status não informado",
+    status: "Testado",
     order: 5,
   },
   {
@@ -99,7 +99,7 @@ const productList: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3T7Maw/", id: "7686593272818437383" }],
-    status: "Status não informado",
+    status: "Testado",
     order: 6,
   },
   {
@@ -111,7 +111,7 @@ const productList: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3w4VkU/", id: "7675516595359223048" }],
-    status: "Status não informado",
+    status: "Testado",
     order: 7,
   },
   {
@@ -123,8 +123,20 @@ const productList: Product[] = [
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3wq95u/", id: "7674444960367758600" }],
-    status: "Status não informado",
+    status: "Testado",
     order: 8,
+  },
+  {
+    id: "lavadora-de-alta-pressao-wap-1800",
+    name: "Lavadora de Alta Pressão WAP 1800",
+    category: "Casa",
+    image: { placeholder: "/produtos/lavadora-wap-1800.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Testei a potência, a praticidade e a eficiência da lavadora na limpeza de diferentes superfícies.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSqKFTHFr/" }],
+    status: "Testado",
+    order: 9,
   },
 ];
 
