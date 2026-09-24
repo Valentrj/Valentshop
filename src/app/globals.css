@@ -83,3 +83,9 @@ main, main section, main article, main footer {
     transform: translateY(-1px);
   }
 }
+
+@media (min-width: 768px) {
+  .premium-card {
+    min-height: 100%;
+  }
+}

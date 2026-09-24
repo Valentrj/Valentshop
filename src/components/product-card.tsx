@@ -12,8 +12,9 @@ type ProductCardProps = {
 
 export default function ProductCard({ product, index }: ProductCardProps) {
   return (
-    <article className="premium-card group rounded-[1.7rem] bg-(--card) p-4 ring-1 ring-black/5">
-      <div className={`${product.image.backgroundClass} relative grid aspect-3/4 place-items-center overflow-hidden rounded-[1.25rem]`}>
+    <article className="premium-card group overflow-hidden rounded-[1.7rem] border border-(--border) bg-(--card) p-4 shadow-[0_14px_28px_rgba(27,33,30,0.05)]">
+      <div className={`${product.image.backgroundClass} relative grid aspect-3/4 place-items-center overflow-hidden rounded-[1.25rem] ring-1 ring-black/5`}>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/5" />
         <Image
           src={product.image.placeholder}
           alt={product.name}
