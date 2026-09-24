@@ -41,8 +41,8 @@ export default function Home() {
               <span className="size-2 rounded-full bg-[#ff5c35]" />PRODUTOS EM AÇÃO
             </div>
             <h1 className="max-w-3xl text-5xl font-black leading-[0.82] tracking-[-0.082em] sm:text-7xl lg:text-8xl">Valent<br /><em className="font-serif font-normal tracking-[-0.09em] text-[#ff5c35]">Shop.</em></h1>
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl">Achados, testes e produtos que <strong className="font-extrabold text-(--ink)">valem a pena.</strong></p>
-            <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, demonstro e mostro cada produto em uso antes de divulgar.</p>
+            <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl">Produtos reais, testados na prática e <strong className="font-extrabold text-(--ink)">aprovados antes de recomendar.</strong></p>
+            <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, uso e mostro cada produto de verdade antes de indicar para você.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
               <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card)/80 px-5 py-3.5 text-sm font-bold text-(--ink) shadow-[0_10px_22px_rgba(27,33,30,0.04)] hover:border-[#ff5c35] hover:text-[#ff5c35]">Falar no WhatsApp</a>
@@ -82,15 +82,15 @@ export default function Home() {
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
             <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">TESTE REAL</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Produtos usados e mostrados na prática.</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Produtos que eu testo e uso antes de recomendar.</p>
           </div>
           <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
-            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">COMPRA COM CONFIANÇA</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Conteúdo honesto e direto para decidir melhor.</p>
+            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">DECISÃO MELHOR</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Conteúdo honesto para você escolher sem suposições.</p>
           </div>
           <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
             <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">CANAL ATIVO</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Vídeos e testes que mostram o produto em uso.</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Vídeos e testes mostrando o produto em uso real.</p>
           </div>
         </div>
       </section>
@@ -100,8 +100,8 @@ export default function Home() {
           <div className="mb-9 flex items-end justify-between gap-5">
             <div>
               <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p>
-              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2>
-              <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes.</p>
+              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que passei a testar e aprovar.</h2>
+              <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes e revisão real.</p>
             </div>
           </div>
           <div className="rounded-[2rem] border border-(--border) bg-gradient-to-b from-(--card) to-(--section) p-4 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-5">
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="mb-9">
             <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS DE DEMONSTRAÇÃO</p>
             <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja os produtos em ação.</h2>
-            <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Testes reais, mostrando os produtos como eles são.</p>
+            <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Testes reais, mostrando como eles funcionam na prática.</p>
           </div>
           <div className="rounded-[2rem] border border-(--border) bg-(--card)/80 p-3 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-4">
             <VideoCarousel products={products} />
@@ -127,12 +127,12 @@ export default function Home() {
         <div className="grid gap-8 rounded-[2rem] bg-[#ff5c35] p-7 text-white shadow-[0_24px_50px_rgba(255,92,53,0.22)] sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
           <div>
             <p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]">PARA MARCAS E LOJAS</p>
-            <h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">Conteúdo que mostra seu produto de verdade.</h2>
+            <h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">Conteúdo que mostra seu produto com clareza e impacto.</h2>
           </div>
           <div>
-            <p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes de produtos, conteúdo para TikTok Shop e divulgação em vídeos e lives.</p>
+            <p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes reais e conteúdo para TikTok Shop, com foco em mostrar valor e gerar confiança.</p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><a href="#videos" className="rounded-full border border-white/30 px-3 py-2">Demonstração</a><a href="https://www.tiktok.com/@valentachados?lang=pt-BR" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</a><a href="https://www.tiktok.com/@valentshoprj" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</a></div>
-            <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Falar sobre parceria <ArrowUpRight /></a>
+            <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Quero anunciar meu produto <ArrowUpRight /></a>
           </div>
         </div>
       </section>
