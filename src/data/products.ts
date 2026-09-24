@@ -138,6 +138,33 @@ const productList: Product[] = [
     status: "Testado",
     order: 9,
   },
+  {
+    id: "aspirador-de-po-portatil-premium",
+    name: "Aspirador de Pó Portátil Premium",
+    category: "Casa",
+    image: { placeholder: "/produtos/aspirador-po-portatil-premium.png", backgroundClass: "bg-[#ffd8be]" },
+    shortDescription: "Testei a sucção, os acessórios e a praticidade desse aspirador portátil para diferentes tipos de limpeza.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [
+      { title: "Unboxing", videoLink: "https://vt.tiktok.com/ZSbRVJXqa/" },
+      { title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbR4vfB2/" },
+    ],
+    status: "Testado",
+    order: 10,
+  },
+  {
+    id: "creatina-dobro-pack-7-dias",
+    name: "Creatina Dobro — Pack 7 Dias",
+    category: "Suplementos",
+    image: { placeholder: "/produtos/creatina-dobro-pack-7-dias.png", backgroundClass: "bg-[#dcd4ff]" },
+    shortDescription: "Testei a Creatina Dobro saborizada e os dois sabores do pack de 7 dias.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbRV6kSy/" }],
+    status: "Testado",
+    order: 11,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
