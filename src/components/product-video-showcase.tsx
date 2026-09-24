@@ -17,12 +17,8 @@ export default function ProductVideoShowcase({ videos }: ProductVideoShowcasePro
 
   return (
     <div className="mt-6">
-      <div className="rounded-[1.7rem] bg-(--section) p-6 sm:p-8">
-        <p className="text-lg font-black tracking-[-.03em]">{activeVideo.title}</p>
-        <p className="mt-2 text-sm leading-relaxed text-(--copy)">Assista à demonstração diretamente no TikTok.</p>
-      </div>
       {videos.length > 1 && (
-        <div className="mt-3 flex flex-wrap gap-2" aria-label="Selecionar vídeo">
+        <div className="mb-4 flex flex-wrap gap-2" aria-label="Selecionar vídeo">
           {videos.map((video, index) => (
             <a
               href={video.videoLink}
@@ -41,6 +37,10 @@ export default function ProductVideoShowcase({ videos }: ProductVideoShowcasePro
           ))}
         </div>
       )}
+      <div className="rounded-[1.7rem] bg-(--section) p-6 sm:p-8">
+        <p className="text-lg font-black tracking-[-.03em]">{activeVideo.title}</p>
+        <p className="mt-2 text-sm leading-relaxed text-(--copy)">Assista à demonstração diretamente no TikTok.</p>
+      </div>
     </div>
   );
 }
