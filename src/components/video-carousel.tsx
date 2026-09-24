@@ -38,7 +38,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
 
   return (
     <div
-      className="relative"
+      className="relative touch-pan-y select-none"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -76,7 +76,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
           type="button"
           aria-label="Produto anterior"
           onClick={() => showSlide(activeIndex - 1)}
-          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35]"
+          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]"
         >
           ←
         </button>
@@ -88,7 +88,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
               aria-label={`Ir para ${item.name}`}
               aria-current={index === activeIndex ? "true" : undefined}
               onClick={() => showSlide(index)}
-              className={`size-2.5 rounded-full transition ${index === activeIndex ? "bg-[#ff5c35]" : "bg-(--border) hover:bg-[#ff977d]"}`}
+              className={`size-2.5 rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${index === activeIndex ? "bg-[#ff5c35]" : "bg-(--border) hover:bg-[#ff977d]"}`}
             />
           ))}
         </div>
@@ -96,7 +96,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
           type="button"
           aria-label="Próximo produto"
           onClick={() => showSlide(activeIndex + 1)}
-          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35]"
+          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]"
         >
           →
         </button>
