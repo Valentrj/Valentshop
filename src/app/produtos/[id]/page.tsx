@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
@@ -9,6 +10,36 @@ import { ProductVideoProvider } from "@/components/product-video-context";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const product = products.find((item) => item.id === id);
+
+  if (!product) {
+    return {};
+  }
+
+  return {
+    title: `${product.name} | Valent Shop`,
+    description: product.shortDescription,
+    openGraph: {
+      title: `${product.name} | Valent Shop`,
+      description: product.shortDescription,
+      type: "article",
+      images: [{ url: product.image.placeholder, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Valent Shop`,
+      description: product.shortDescription,
+      images: [product.image.placeholder],
+    },
+  };
 }
 
 export default async function ProductPage({
