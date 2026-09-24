@@ -34,7 +34,7 @@ export default function Home() {
             <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl">Achados, testes e produtos que <strong className="font-extrabold text-(--ink)">valem a pena.</strong></p>
             <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, demonstro e mostro cada produto em uso antes de divulgar.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#achados" className="inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
+              <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
               <a href="#videos" className="inline-flex items-center gap-2 px-2 py-3 text-sm font-bold underline decoration-[#b4beb8] underline-offset-4 transition hover:text-[#ff5c35]">Assistir às demonstrações <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
 
       <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
 
-      <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp" className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] p-4 text-white shadow-lg shadow-[#25D366]/30 transition hover:-translate-y-0.5 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
+      <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp" className="premium-cta fixed bottom-5 right-5 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] p-4 text-white shadow-lg shadow-[#25D366]/30 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
         <span aria-hidden="true" className="text-2xl leading-none">✆</span>
       </a>
     </main>

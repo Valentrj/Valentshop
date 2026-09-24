@@ -28,7 +28,7 @@ export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsP
             type="button"
             aria-pressed={selectedCategory === category}
             onClick={() => setSelectedCategory(category)}
-            className={`rounded-full px-4 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${selectedCategory === category ? "bg-[#ff5c35] text-white" : "border border-(--border) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
+            className={`premium-filter rounded-full px-4 py-2.5 text-sm font-bold shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${selectedCategory === category ? "bg-[#ff5c35] text-white shadow-[#ff5c35]/20" : "border border-(--border) bg-(--card) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
           >
             {category}
           </button>
