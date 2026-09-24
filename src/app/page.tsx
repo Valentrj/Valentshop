@@ -13,7 +13,7 @@ export default function Home() {
     <main className="relative overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <a href="#inicio" className="flex items-center gap-2.5" aria-label="Valent Shop, início">
-          <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white">V</span>
+          <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white shadow-[0_10px_20px_rgba(255,92,53,0.25)]">V</span>
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </a>
         <nav className="hidden items-center gap-7 text-sm font-semibold text-(--muted) md:flex" aria-label="Navegação principal">
@@ -33,7 +33,7 @@ export default function Home() {
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff5c35]/20 bg-[#fff2ee] px-3 py-1.5 text-[10px] font-black tracking-[0.16em] text-[#ff5c35] shadow-sm">
               <span className="size-2 rounded-full bg-[#ff5c35]" />PRODUTOS EM AÇÃO
             </div>
-            <h1 className="max-w-3xl text-5xl font-black leading-[.92] tracking-[-0.075em] sm:text-7xl lg:text-8xl">Valent<br /><em className="font-serif font-normal tracking-[-0.09em] text-[#ff5c35]">Shop.</em></h1>
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.82] tracking-[-0.082em] sm:text-7xl lg:text-8xl">Valent<br /><em className="font-serif font-normal tracking-[-0.09em] text-[#ff5c35]">Shop.</em></h1>
             <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl">Achados, testes e produtos que <strong className="font-extrabold text-(--ink)">valem a pena.</strong></p>
             <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, demonstro e mostro cada produto em uso antes de divulgar.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">

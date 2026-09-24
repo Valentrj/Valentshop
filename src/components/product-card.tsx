@@ -25,9 +25,9 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e] shadow-sm backdrop-blur-sm">TESTE 0{index + 1}</span>
       </div>
       <div className="px-1 pb-2 pt-4">
-        <p className="text-xs font-bold text-(--copy)">{product.category}</p>
-        <h3 className="mt-1 text-xl font-black tracking-[-.04em]">{product.name}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-(--copy)">{product.shortDescription}</p>
+        <p className="text-xs font-bold tracking-[0.12em] text-(--copy)">{product.category}</p>
+        <h3 className="mt-2 text-xl font-black tracking-[-.05em]">{product.name}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-(--copy)">{product.shortDescription}</p>
         <a href={`/produtos/${product.id}`} className="premium-link mt-4 inline-flex items-center gap-1 text-sm font-black text-[#ff5c35]">Ver demonstração <ArrowUpRight /></a>
       </div>
     </article>
