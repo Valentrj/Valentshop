@@ -38,7 +38,7 @@ export default function Home() {
             <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, demonstro e mostro cada produto em uso antes de divulgar.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
-              <a href="#videos" className="inline-flex items-center gap-2 px-2 py-3 text-sm font-bold underline decoration-[#b4beb8] underline-offset-4 transition hover:text-[#ff5c35]">Assistir às demonstrações <span aria-hidden="true">↓</span></a>
+              <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card)/80 px-5 py-3.5 text-sm font-bold text-(--ink) shadow-[0_10px_22px_rgba(27,33,30,0.04)] hover:border-[#ff5c35] hover:text-[#ff5c35]">Falar no WhatsApp</a>
             </div>
 
             <div className="mt-8 grid max-w-lg gap-3 sm:grid-cols-3">
@@ -73,6 +73,23 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-4 pt-3 sm:px-8 lg:px-10">
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
+            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">TESTE REAL</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Produtos usados e mostrados na prática.</p>
+          </div>
+          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
+            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">COMPRA COM CONFIANÇA</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Conteúdo honesto e direto para decidir melhor.</p>
+          </div>
+          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
+            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">CANAL ATIVO</p>
+            <p className="mt-2 text-base font-black tracking-[-.04em]">Vídeos e testes que mostram o produto em uso.</p>
           </div>
         </div>
       </section>
