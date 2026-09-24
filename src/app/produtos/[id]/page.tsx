@@ -54,6 +54,13 @@ export default async function ProductPage({
     notFound();
   }
 
+  const hasValidProductLink = Boolean(
+    product.productLink &&
+      !product.productLink.startsWith("[") &&
+      !product.productLink.toLowerCase().includes("pendente") &&
+      !product.productLink.includes(" ")
+  );
+
   const productVideos = product.videos;
 
   return (
@@ -105,7 +112,11 @@ export default async function ProductPage({
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <ProductVideoTopLink />
-            <a href={product.productLink} className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
+            {hasValidProductLink ? (
+              <a href={product.productLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
+            ) : (
+              <span className="inline-flex items-center justify-center rounded-full border border-(--border) bg-(--panel) px-5 py-3.5 text-sm font-bold text-(--muted)">Link do produto pendente</span>
+            )}
           </div>
         </div>
       </section>
