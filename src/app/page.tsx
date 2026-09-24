@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeFeaturedProducts from "@/components/home-featured-products";
+import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
 }
+
+const stats = [
+  { value: "11k+", label: "SEGUIDORES" },
+  { value: "12", label: "TESTES" },
+  { value: "100%", label: "REAL" },
+];
 
 export default function Home() {
   return (
@@ -42,18 +49,12 @@ export default function Home() {
             </div>
 
             <div className="mt-8 grid max-w-lg gap-3 sm:grid-cols-3">
-              <div className="rounded-[1.4rem] border border-(--border) bg-(--card)/90 p-3 shadow-[0_10px_25px_rgba(27,33,30,0.04)] backdrop-blur-sm">
-                <p className="text-2xl font-black tracking-[-.06em] text-(--ink)">11k+</p>
-                <p className="mt-1 text-[10px] font-black tracking-[0.12em] text-(--muted)">SEGUIDORES</p>
-              </div>
-              <div className="rounded-[1.4rem] border border-(--border) bg-(--card)/90 p-3 shadow-[0_10px_25px_rgba(27,33,30,0.04)] backdrop-blur-sm">
-                <p className="text-2xl font-black tracking-[-.06em] text-(--ink)">12</p>
-                <p className="mt-1 text-[10px] font-black tracking-[0.12em] text-(--muted)">TESTES</p>
-              </div>
-              <div className="rounded-[1.4rem] border border-(--border) bg-(--card)/90 p-3 shadow-[0_10px_25px_rgba(27,33,30,0.04)] backdrop-blur-sm">
-                <p className="text-2xl font-black tracking-[-.06em] text-(--ink)">100%</p>
-                <p className="mt-1 text-[10px] font-black tracking-[0.12em] text-(--muted)">REAL</p>
-              </div>
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-[1.4rem] border border-(--border) bg-(--card)/90 p-3 shadow-[0_10px_25px_rgba(27,33,30,0.04)] backdrop-blur-sm">
+                  <p className="text-2xl font-black tracking-[-.06em] text-(--ink)">{stat.value}</p>
+                  <p className="mt-1 text-[10px] font-black tracking-[0.12em] text-(--muted)">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
@@ -144,5 +145,3 @@ export default function Home() {
     </main>
   );
 }
-
-import VideoCarousel from "@/components/video-carousel";
