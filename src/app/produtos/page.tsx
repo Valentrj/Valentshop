@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProductCard from "@/components/product-card";
+import ProductFilterGrid from "@/components/product-filter-grid";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 
@@ -24,9 +24,7 @@ export default function ProductsPage() {
           <h1 className="mt-2 text-4xl font-black tracking-[-.06em] sm:text-6xl">Todos os testes.</h1>
           <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja todos os produtos que já passaram pelos testes.</p>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}
-        </div>
+        <ProductFilterGrid products={products} />
       </section>
 
       <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
