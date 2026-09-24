@@ -61,6 +61,9 @@ export default async function ProductPage({
       !product.productLink.includes(" ")
   );
 
+  const productCtaClassName =
+    "inline-flex items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]";
+
   const productVideos = product.videos;
 
   return (
@@ -78,13 +81,13 @@ export default async function ProductPage({
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-8 pt-8 sm:px-8 sm:pb-12 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
-        <div className={`${product.image.backgroundClass} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-4xl p-3 shadow-2xl shadow-[#1b211e]/15 sm:p-4`}>
+        <div className={`${product.image.backgroundClass} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-[#1b211e]/15 ring-1 ring-black/5 sm:p-4`}>
           <Image
             src={product.image.placeholder}
             alt={product.name}
             fill
             sizes="(min-width: 1024px) 42vw, 100vw"
-            className="rounded-[1.25rem] object-cover"
+            className="rounded-[1.5rem] object-cover"
           />
         </div>
 
@@ -110,13 +113,20 @@ export default async function ProductPage({
               </div>
             </dl>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <ProductVideoTopLink />
             {hasValidProductLink ? (
-              <a href={product.productLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#1b211e] px-5 py-3.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!">Ver produto</a>
+              <a href={product.productLink} target="_blank" rel="noreferrer" className={`${productCtaClassName} bg-[#1b211e] text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-[#ff5c35]`}>
+                Ver produto
+              </a>
             ) : (
-              <span className="inline-flex items-center justify-center rounded-full border border-(--border) bg-(--panel) px-5 py-3.5 text-sm font-bold text-(--muted)">Link do produto pendente</span>
+              <span className={`${productCtaClassName} cursor-default border border-dashed border-(--border) bg-(--panel) text-(--muted)`}>
+                Link em breve
+              </span>
             )}
+            <Link href="/produtos" className={`${productCtaClassName} border border-(--border) bg-transparent text-(--ink) transition hover:border-[#ff5c35] hover:text-[#ff5c35]`}>
+              Ver outros testes
+            </Link>
           </div>
         </div>
       </section>
