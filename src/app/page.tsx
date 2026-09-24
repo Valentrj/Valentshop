@@ -1,6 +1,8 @@
 import Image from "next/image";
-
 import Link from "next/link";
+import HomeFeaturedProducts from "@/components/home-featured-products";
+import { products } from "@/data/products";
+import ThemeToggle from "@/app/theme-toggle";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
@@ -8,7 +10,7 @@ function ArrowUpRight() {
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-(--page) text-(--ink)">
+    <main className="relative overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <a href="#inicio" className="flex items-center gap-2.5" aria-label="Valent Shop, início">
           <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white">V</span>
@@ -58,8 +60,8 @@ export default function Home() {
 
       <section id="achados" className="border-y border-(--border) bg-(--section) py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9 flex items-end justify-between gap-5"><div><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes.</p></div><Link href="/produtos" className="hidden text-sm font-bold underline underline-offset-4 sm:block">Ver todos os testes</Link></div>
-          <div className="grid gap-4 md:grid-cols-3">{products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}</div>
+          <div className="mb-9 flex items-end justify-between gap-5"><div><p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p><h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que eu testei.</h2><p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes.</p></div></div>
+          <HomeFeaturedProducts products={products} />
         </div>
       </section>
 
@@ -68,10 +70,12 @@ export default function Home() {
       <section id="parcerias" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10"><div className="grid gap-8 rounded-4xl bg-[#ff5c35] p-7 text-white sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end"><div><p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]">PARA MARCAS E LOJAS</p><h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">Conteúdo que mostra seu produto de verdade.</h2></div><div><p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes de produtos, conteúdo para TikTok Shop e divulgação em vídeos e lives.</p><div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><a href="#videos" className="rounded-full border border-white/30 px-3 py-2">Demonstração</a><a href="https://www.tiktok.com/@valentachados?lang=pt-BR" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</a><a href="https://www.tiktok.com/@valentshoprj" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</a></div><a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Falar sobre parceria <ArrowUpRight /></a></div></div></section>
 
       <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
+
+      <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp" className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] p-4 text-white shadow-lg shadow-[#25D366]/30 transition hover:-translate-y-0.5 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
+        <span aria-hidden="true" className="text-2xl leading-none">✆</span>
+      </a>
     </main>
   );
 }
-import ProductCard from "@/components/product-card";
+
 import VideoCarousel from "@/components/video-carousel";
-import { products } from "@/data/products";
-import ThemeToggle from "./theme-toggle";
