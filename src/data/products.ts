@@ -203,10 +203,10 @@ const productList: Product[] = [
   },
   {
     id: "luminaria-led-setup-controle",
-    name: "Luminária LED de Setup com Controle",
+    name: "Lightbar Magnética Touch",
     category: "Acessórios / Games",
     image: { placeholder: "/produtos/luminaria-led-setup-controle.png", backgroundClass: "bg-[#d7f1e8]" },
-    shortDescription: "Demonstração da Luminária LED de Setup com Controle.",
+    shortDescription: "Demonstração da Lightbar Magnética Touch.",
     price: "Preço pendente",
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbBUodpb/" }],
