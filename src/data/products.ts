@@ -201,6 +201,18 @@ const productList: Product[] = [
     status: "Testado",
     order: 14,
   },
+  {
+    id: "luminaria-led-setup-controle",
+    name: "Luminária LED de Setup com Controle",
+    category: "Acessórios / Games",
+    image: { placeholder: "/produtos/luminaria-led-setup-controle.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Demonstração da Luminária LED de Setup com Controle.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbBUodpb/" }],
+    status: "Testado",
+    order: 15,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
