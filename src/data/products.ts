@@ -213,6 +213,33 @@ const productList: Product[] = [
     status: "Testado",
     order: 15,
   },
+  {
+    id: "caderno-a6-vintage",
+    name: "Caderno A6 Vintage",
+    category: "Achados",
+    image: { placeholder: "/produtos/CADERNO VINTAGE.png", backgroundClass: "bg-[#ffd8be]" },
+    shortDescription: "Testei o acabamento, os detalhes da capa e o sistema de folhas removíveis desse caderno vintage.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [
+      { title: "Conhecendo o caderno", videoLink: "https://vt.tiktok.com/ZSbfjMhbM/" },
+      { title: "Detalhes e folhas removíveis", videoLink: "https://vt.tiktok.com/ZSbfjWdGG/" },
+    ],
+    status: "Testado",
+    order: 16,
+  },
+  {
+    id: "ventilador-retratil-luz-led",
+    name: "Ventilador Retrátil com Luz LED",
+    category: "Casa",
+    image: { placeholder: "/produtos/VENTILADOR RETRÁTIL.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Testei a ventilação, a iluminação e os recursos desse ventilador retrátil com luz LED.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbfjYNLM/" }],
+    status: "Testado",
+    order: 17,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
