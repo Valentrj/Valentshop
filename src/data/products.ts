@@ -60,7 +60,7 @@ const productList: Product[] = [
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSq3pcVut/", id: "7683661754416499975" }],
     status: "Testado",
-    order: 3,
+    order: 17,
     featured: false,
   },
   {
@@ -238,7 +238,7 @@ const productList: Product[] = [
     productLink: "[Link do produto pendente]",
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbfjYNLM/" }],
     status: "Testado",
-    order: 17,
+    order: 3,
   },
 ];
 
