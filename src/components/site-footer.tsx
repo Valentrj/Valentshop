@@ -11,9 +11,11 @@ export default function SiteFooter() {
         <div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div>
         <p>© {new Date().getFullYear()} Valent Shop. Produtos testados e mostrados em vídeo.</p>
         <div className="flex flex-wrap gap-4 font-semibold">
+          <Link href="/como-testo" className="transition hover:text-[#ff5c35]">Como testo</Link>
           {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="transition hover:text-[#ff5c35]">{link.label}</a>)}
         </div>
       </div>
     </footer>
   );
 }
+import Link from "next/link";

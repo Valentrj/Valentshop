@@ -19,6 +19,7 @@ export type Product = {
   productLink: string;
   videos: ProductVideo[];
   status: string;
+  verdict?: "Recomendo" | "Vale com ressalvas";
   order: number;
   featured?: boolean;
 };

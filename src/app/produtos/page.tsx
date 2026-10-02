@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import ProductFilterGrid from "@/components/product-filter-grid";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
@@ -25,7 +26,9 @@ export default function ProductsPage() {
           <h1 className="mt-2 text-4xl font-black tracking-[-.06em] sm:text-6xl">Todos os testes.</h1>
           <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja todos os produtos que já passaram pelos testes.</p>
         </div>
-        <ProductFilterGrid products={products} />
+        <Suspense fallback={<div className="mt-8 h-28 rounded-[1.7rem] border border-(--border) bg-(--card)" />}>
+          <ProductFilterGrid products={products} />
+        </Suspense>
       </section>
 
       <SiteFooter />

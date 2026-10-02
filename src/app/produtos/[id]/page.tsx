@@ -66,6 +66,7 @@ export default async function ProductPage({
     "inline-flex items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]";
 
   const productVideos = product.videos;
+  const whatsappUrl = `https://wa.me/5521994270888?text=${encodeURIComponent(`Olá! Vi o teste de ${product.name} no Valent Shop e gostaria de tirar uma dúvida.`)}`;
 
   return (
     <ProductVideoProvider initialVideoUrl={productVideos[0].videoLink}>
@@ -116,6 +117,9 @@ export default async function ProductPage({
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <ProductVideoTopLink />
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className={`${productCtaClassName} border border-(--border) bg-(--card) text-(--ink) hover:border-[#25D366] hover:text-[#168b48]`}>
+              Tirar dúvida no WhatsApp
+            </a>
             {hasValidProductLink ? (
               <a href={product.productLink} target="_blank" rel="noreferrer" className={`${productCtaClassName} bg-[#1b211e] text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-[#ff5c35]`}>
                 Ver produto
