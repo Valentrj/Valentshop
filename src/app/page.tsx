@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import HomeFeaturedProducts from "@/components/home-featured-products";
 import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
+import SiteFooter from "@/components/site-footer";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
@@ -11,7 +11,7 @@ function ArrowUpRight() {
 
 const stats = [
   { value: "11k+", label: "SEGUIDORES" },
-  { value: "12", label: "TESTES" },
+  { value: String(products.length), label: "TESTES" },
   { value: "100%", label: "REAL" },
 ];
 
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
+      <SiteFooter />
 
       <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp" className="premium-cta fixed bottom-5 right-5 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] p-4 text-white shadow-lg shadow-[#25D366]/30 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
         <span aria-hidden="true" className="text-2xl leading-none">✆</span>

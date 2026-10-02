@@ -7,6 +7,7 @@ import ThemeToggle from "@/app/theme-toggle";
 import ProductVideoShowcase from "@/components/product-video-showcase";
 import ProductVideoTopLink from "@/components/product-video-top-link";
 import { ProductVideoProvider } from "@/components/product-video-context";
+import SiteFooter from "@/components/site-footer";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
@@ -139,7 +140,7 @@ export default async function ProductPage({
         </div>
       </section>
 
-      <footer className="border-t border-(--border)"><div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-(--copy) sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><div className="flex items-center gap-2 font-black text-(--ink)"><span className="grid size-6 place-items-center rounded-full bg-[#ff5c35] text-xs text-white">V</span> Valent Shop</div><p>© 2026 Valent Shop. Produtos testados e mostrados em vídeo.</p><div className="flex gap-4 font-semibold"><a href="#">Instagram</a><a href="#">YouTube</a></div></div></footer>
+      <SiteFooter />
       </main>
     </ProductVideoProvider>
   );

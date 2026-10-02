@@ -20,10 +20,8 @@ export default function ProductVideoShowcase({ videos }: ProductVideoShowcasePro
       {videos.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-2" aria-label="Selecionar vídeo">
           {videos.map((video, index) => (
-            <a
-              href={video.videoLink}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              type="button"
               key={video.videoLink}
               aria-current={index === activeIndex ? "true" : undefined}
               onClick={() => {
@@ -33,13 +31,16 @@ export default function ProductVideoShowcase({ videos }: ProductVideoShowcasePro
               className={`rounded-full px-4 py-2.5 text-sm font-bold transition ${index === activeIndex ? "bg-[#ff5c35] text-white" : "border border-(--border) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
             >
               {video.title}
-            </a>
+            </button>
           ))}
         </div>
       )}
-      <div className="rounded-[1.7rem] bg-(--section) p-6 sm:p-8">
+      <div className="rounded-[1.7rem] border border-(--border) bg-(--section) p-6 sm:p-8">
         <p className="text-lg font-black tracking-[-.03em]">{activeVideo.title}</p>
-        <p className="mt-2 text-sm leading-relaxed text-(--copy)">Assista à demonstração diretamente no TikTok.</p>
+        <p className="mt-2 max-w-lg text-sm leading-relaxed text-(--copy)">O vídeo abre no TikTok, onde você pode assistir à demonstração completa.</p>
+        <a href={activeVideo.videoLink} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e34a27] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
+          Assistir a {activeVideo.title} no TikTok <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   );
