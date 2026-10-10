@@ -49,6 +49,7 @@ export default function Home() {
               <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
               <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card)/80 px-5 py-3.5 text-sm font-bold text-(--ink) shadow-[0_10px_22px_rgba(27,33,30,0.04)] hover:border-[#ff5c35] hover:text-[#ff5c35]">Falar no WhatsApp</a>
             </div>
+            <a href="#marcas" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#ff5c35] transition hover:text-[#e34a27]">Conheça as marcas em destaque <span aria-hidden="true">↓</span></a>
 
             <div className="mt-8 grid max-w-lg gap-3 sm:grid-cols-3">
               {stats.map((stat) => (
@@ -80,19 +81,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-4 pt-3 sm:px-8 lg:px-10">
-        <div className="grid gap-3 md:grid-cols-3">
-          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
-            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">TESTE REAL</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Produtos que eu testo e uso antes de recomendar.</p>
+      <section id="marcas" className="border-y border-(--border) bg-(--section) py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
+            <div>
+              <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">MARCAS EM DESTAQUE</p>
+              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Explore por marca.</h2>
+              <p className="mt-2 max-w-md leading-relaxed text-(--copy)">Vídeos e produtos de cada marca reunidos em um só lugar.</p>
+            </div>
+            <span className="hidden shrink-0 text-sm font-semibold text-(--muted) sm:block">Toque para explorar ↗</span>
           </div>
-          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
-            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">DECISÃO MELHOR</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Conteúdo honesto para você escolher sem suposições.</p>
-          </div>
-          <div className="rounded-[1.5rem] border border-(--border) bg-(--card) p-4 shadow-[0_12px_25px_rgba(27,33,30,0.04)]">
-            <p className="text-[10px] font-black tracking-[0.16em] text-[#ff5c35]">CANAL ATIVO</p>
-            <p className="mt-2 text-base font-black tracking-[-.04em]">Vídeos e testes mostrando o produto em uso real.</p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+            {brands.map((brand) => (
+              <a key={brand.slug} href={`/marcas/${brand.slug}`} aria-label={`Ver vídeos e destaques da marca ${brand.name}`} className="group relative block aspect-video overflow-hidden rounded-2xl border border-(--border) bg-(--card) shadow-[0_12px_28px_rgba(27,33,30,0.08)] transition hover:-translate-y-1 hover:border-[#ff5c35]/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
+                <Image src={brand.banner} alt={`Banner ${brand.name}`} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                <span aria-hidden="true" className="absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-white/95 text-lg font-bold text-[#1b211e] shadow-sm transition group-hover:bg-[#ff5c35] group-hover:text-white">↗</span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -121,27 +126,6 @@ export default function Home() {
           </div>
           <div className="rounded-[2rem] border border-(--border) bg-(--card)/80 p-3 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-4">
             <VideoCarousel products={products} />
-          </div>
-        </div>
-      </section>
-
-      <section id="marcas" className="border-y border-(--border) bg-(--section) py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9">
-            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">MARCAS EM DESTAQUE</p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Explore por marca.</h2>
-            <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Escolha uma marca e encontre os vídeos e destaques reunidos em um só lugar.</p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {brands.map((brand, index) => (
-              <a key={brand.slug} href={`/marcas/${brand.slug}`} className="group relative flex min-h-52 overflow-hidden rounded-[1.7rem] border border-(--border) bg-(--card) p-5 shadow-[0_14px_30px_rgba(27,33,30,0.05)] transition hover:-translate-y-1 hover:border-[#ff5c35]/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
-                {brand.banner ? <Image src={brand.banner} alt={`Banner ${brand.name}`} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" /> : <div className={`absolute inset-0 ${index % 2 ? "bg-gradient-to-br from-[#cce6dc]/70 via-(--card) to-[#dcd4ff]/40" : "bg-gradient-to-br from-[#ffd8be]/70 via-(--card) to-[#d7f1e8]/50"}`} />}
-                <div className="relative z-10 mt-auto flex w-full items-end justify-between gap-3">
-                  <div><p className="text-[10px] font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS E DESTAQUES</p><h3 className="mt-1 text-2xl font-black tracking-[-.05em]">{brand.name}</h3></div>
-                  <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-[#1b211e] text-lg text-white transition group-hover:bg-[#ff5c35]">↗</span>
-                </div>
-              </a>
-            ))}
           </div>
         </div>
       </section>
