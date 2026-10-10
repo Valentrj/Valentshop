@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="parcerias" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10">
+      <section id="parcerias" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
         <div className="grid gap-8 rounded-[2rem] bg-[#ff5c35] p-7 text-white shadow-[0_24px_50px_rgba(255,92,53,0.22)] sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
           <div>
             <p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]">PARA MARCAS E LOJAS</p>
