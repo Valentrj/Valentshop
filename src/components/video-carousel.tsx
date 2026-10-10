@@ -54,7 +54,6 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
               priority
             />
             <span className="absolute left-4 top-4 rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black">TESTE 0{activeIndex + 1}</span>
-            <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-4 py-2.5 text-xs font-black text-white shadow-lg transition group-hover/image:bg-white group-hover/image:text-[#1b211e]">▶ Assistir vídeo</span>
           </a>
           <div className="flex flex-col p-6 sm:p-8 lg:p-10">
             <p className="text-[10px] font-black tracking-[.14em] text-[#ff977d]">{product.category.toUpperCase()}</p>

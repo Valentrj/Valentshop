@@ -27,10 +27,9 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             className="object-cover transition duration-500 ease-out group-hover/image:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/20" />
-          <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#1b211e]/85 px-3 py-1.5 text-[10px] font-black text-white shadow-sm backdrop-blur-sm transition group-hover/image:bg-[#ff5c35]">▶ Assistir</span>
           <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e] shadow-sm backdrop-blur-sm">TESTE 0{index + 1}</span>
         </a>
-        <div className="relative z-10"><FavoriteButton productId={product.id} productName={product.name} /></div>
+        <FavoriteButton productId={product.id} productName={product.name} />
       </div>
       <div className="px-1 pb-2 pt-4">
         <div className="flex flex-wrap items-center gap-2 text-xs font-bold tracking-[0.12em] text-(--copy)"><span>{product.category}</span><span aria-hidden="true">•</span><span className="text-[#ff5c35]">{product.verdict ?? "TESTADO"}</span></div>
