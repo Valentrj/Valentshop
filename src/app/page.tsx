@@ -67,7 +67,7 @@ export default function Home() {
                 <div className="absolute -right-16 -top-16 size-48 rounded-full bg-[#ff5c35]/15 blur-2xl" />
                 <span className="relative z-10 self-start rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">POR TRÁS DOS TESTES</span>
                 <div className="relative z-10 mx-auto my-auto aspect-square w-full max-w-88 overflow-hidden rounded-full border-8 border-[#ff5c35]/25 shadow-[0_0_45px_rgba(255,92,53,0.25)]">
-                  <Image src="/perfil-valent.png" alt="Valent, criador do Valent Shop" fill sizes="(min-width: 1024px) 22rem, 80vw" className="object-contain" priority />
+                  <Image src="/perfil-valent2.png" alt="Valent, criador do Valent Shop" fill sizes="(min-width: 1024px) 22rem, 80vw" className="object-cover object-top" priority />
                 </div>
                 <div className="relative z-10 mt-5 flex flex-wrap gap-2 text-[10px] font-black tracking-wide text-white">
                   <span className="rounded-full border border-[#ff5c35]/60 px-2.5 py-1.5 text-[#ffb59e]">@valentachados</span>
@@ -91,10 +91,10 @@ export default function Home() {
             </div>
             <span className="hidden shrink-0 text-sm font-semibold text-(--muted) sm:block">Toque para explorar ↗</span>
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-3">
             {brands.map((brand) => (
               <a key={brand.slug} href={`/marcas/${brand.slug}`} aria-label={`Ver vídeos e destaques da marca ${brand.name}`} className="group relative block aspect-video overflow-hidden rounded-2xl border border-(--border) bg-(--card) shadow-[0_12px_28px_rgba(27,33,30,0.08)] transition hover:-translate-y-1 hover:border-[#ff5c35]/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
-                <Image src={brand.banner} alt={`Banner ${brand.name}`} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+                <Image src={brand.banner} alt={`Banner ${brand.name}`} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
                 <span aria-hidden="true" className="absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-white/95 text-lg font-bold text-[#1b211e] shadow-sm transition group-hover:bg-[#ff5c35] group-hover:text-white">↗</span>
               </a>
             ))}
