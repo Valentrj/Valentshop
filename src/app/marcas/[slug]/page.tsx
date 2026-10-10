@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import SiteFooter from "@/components/site-footer";
 import ThemeToggle from "@/app/theme-toggle";
 import { brands } from "@/data/brands";
+import { products } from "@/data/products";
 
 export function generateStaticParams() {
   return brands.map((brand) => ({ slug: brand.slug }));
@@ -41,12 +42,31 @@ export default async function BrandPage({ params }: PageProps<"/marcas/[slug]">)
             <h2 className="mt-2 text-2xl font-black tracking-[-.05em] sm:text-3xl">Veja a {brand.name} em ação.</h2>
             <p className="mt-3 max-w-xl leading-relaxed text-(--copy)">{brand.description}</p>
             {brand.videos.length ? (
-              <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {brand.videos.map((video) => <article key={video.videoLink} className="rounded-2xl border border-(--border) bg-(--section) p-5"><h3 className="font-black">{video.title}</h3><a href={video.videoLink} target="_blank" rel="noreferrer" className="mt-4 inline-flex rounded-full bg-[#ff5c35] px-4 py-2.5 text-sm font-bold text-white">Assistir no TikTok ↗</a></article>)}
+              <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {brand.videos.map((video) => {
+                  const product = products.find((item) => item.id === video.productId);
+
+                  return (
+                    <article key={video.videoLink} className="rounded-2xl border border-(--border) bg-(--section) p-4">
+                      <div className="flex items-center gap-4">
+                        {product && (
+                          <Link href={`/produtos/${product.id}`} className="relative size-18 shrink-0 overflow-hidden rounded-xl border border-(--border) bg-(--card) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]" aria-label={`Ver produto ${product.name}`}>
+                            <Image src={product.image.placeholder} alt={product.name} fill sizes="72px" className="object-contain p-1" />
+                          </Link>
+                        )}
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]">PRODUTO TESTADO</p>
+                          <h3 className="mt-1 font-black leading-snug">{video.title}</h3>
+                        </div>
+                      </div>
+                      <a href={video.videoLink} target="_blank" rel="noreferrer" className="mt-4 inline-flex rounded-full bg-[#ff5c35] px-4 py-2.5 text-sm font-bold text-white">Assistir no TikTok ↗</a>
+                    </article>
+                  );
+                })}
               </div>
             ) : (
               <div className="mt-7 rounded-2xl border border-dashed border-(--border) bg-(--section) p-5 text-sm leading-relaxed text-(--muted)">
-                Os vídeos desta marca aparecerão aqui. Adicione os links e títulos em <code className="font-bold text-(--ink)">src/data/brands.ts</code> e, para trocar o banner, coloque a imagem em <code className="font-bold text-(--ink)">public/marcas</code> e informe o caminho no cadastro da marca.
+                Os vídeos desta marca aparecerão aqui. Adicione os links, títulos e o <code className="font-bold text-(--ink)">productId</code> em <code className="font-bold text-(--ink)">src/data/brands.ts</code>. A miniatura será puxada automaticamente do produto cadastrado.
               </div>
             )}
           </div>
