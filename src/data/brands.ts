@@ -11,11 +11,11 @@ export type Brand = {
   videos: BrandVideo[];
 };
 
-// Coloque os banners em public/marcas e atualize o caminho de cada marca.
+// Banners das marcas salvos em public/destaques.
 // Os vídeos ficam organizados aqui, separados por marca.
 export const brands: Brand[] = [
-  { slug: "emeet", name: "EMEET", banner: "", description: "Destaques e vídeos da EMEET.", videos: [{ title: "Webcam EMEET SmartCam S600", videoLink: "https://vt.tiktok.com/ZSb7qvJEU/" }] },
-  { slug: "xiaomi", name: "Xiaomi", banner: "", description: "Destaques e vídeos da Xiaomi.", videos: [] },
-  { slug: "inova", name: "Inova", banner: "", description: "Destaques e vídeos da Inova.", videos: [] },
-  { slug: "lenyes", name: "Lenyes", banner: "", description: "Destaques e vídeos da Lenyes.", videos: [] },
+  { slug: "emeet", name: "EMEET", banner: "/destaques/destaqueemeet.png", description: "Destaques e vídeos da EMEET.", videos: [{ title: "Webcam EMEET SmartCam S600", videoLink: "https://vt.tiktok.com/ZSb7qvJEU/" }] },
+  { slug: "xiaomi", name: "Xiaomi", banner: "/destaques/Xiaomidestaques.png", description: "Destaques e vídeos da Xiaomi.", videos: [] },
+  { slug: "inova", name: "Inova", banner: "/destaques/inovadestaques.png", description: "Destaques e vídeos da Inova.", videos: [] },
+  { slug: "lenyes", name: "Lenyes", banner: "/destaques/lenyesdestaque.png", description: "Destaques e vídeos da Lenyes.", videos: [] },
 ];
