@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import HomeFeaturedProducts from "@/components/home-featured-products";
 import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
@@ -19,6 +20,8 @@ const stats = [
 const recentProducts = [...products]
   .sort((first, second) => second.order - first.order)
   .slice(0, 3);
+const featuredReview = recentProducts[0];
+const supportingRecentProducts = recentProducts.slice(1);
 
 export default function Home() {
   return (
@@ -109,22 +112,43 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">NOVIDADES</p>
-            <h2 className="mt-1 text-2xl font-black tracking-[-.05em] sm:text-3xl">Últimos testes.</h2>
+            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">REVIEW EM DESTAQUE</p>
+            <h2 className="mt-1 text-2xl font-black tracking-[-.05em] sm:text-3xl">O teste mais recente.</h2>
           </div>
           <a href="#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]">Ver todos</a>
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          {recentProducts.map((product) => (
-            <a key={product.id} href={product.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-(--border) bg-(--card) p-3 shadow-[0_8px_20px_rgba(27,33,30,0.04)] transition hover:-translate-y-0.5 hover:border-[#ff5c35]/50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
-              <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-(--section)">
-                <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
+        {featuredReview && (
+          <article className="overflow-hidden rounded-[2rem] border border-(--border) bg-[#1b211e] text-white shadow-[0_20px_45px_rgba(27,33,30,0.14)]">
+            <div className="grid lg:grid-cols-[.82fr_1.18fr]">
+              <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" aria-label={`Assistir review de ${featuredReview.name} no TikTok`} className={`${featuredReview.image.backgroundClass} group relative min-h-72 overflow-hidden sm:min-h-88 lg:min-h-full`}>
+                <Image src={featuredReview.image.placeholder} alt={featuredReview.name} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]" />
+                <span className="absolute left-5 top-5 rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-white">NOVO TESTE</span>
+              </a>
+              <div className="flex flex-col p-7 sm:p-10">
+                <p className="text-[10px] font-black tracking-[.16em] text-[#ff977d]">{featuredReview.category.toUpperCase()}</p>
+                <h3 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">{featuredReview.name}</h3>
+                <p className="mt-5 max-w-lg leading-relaxed text-[#c4cec8]">{featuredReview.shortDescription}</p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white hover:bg-[#e34a27]">Assistir review <ArrowUpRight /></a>
+                  <Link href={`/produtos/${featuredReview.id}`} className="premium-cta inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-bold text-white transition hover:border-[#ff977d] hover:text-[#ff977d]">Ver produto <ArrowUpRight /></Link>
+                </div>
               </div>
-              <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]">NOVO TESTE</p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
-              <span aria-hidden="true" className="ml-auto text-lg text-[#ff5c35]">↗</span>
-            </a>
-          ))}
-        </div>
+            </div>
+          </article>
+        )}
+        {supportingRecentProducts.length > 0 && (
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {supportingRecentProducts.map((product) => (
+              <a key={product.id} href={product.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-(--border) bg-(--card) p-3 shadow-[0_8px_20px_rgba(27,33,30,0.04)] transition hover:-translate-y-0.5 hover:border-[#ff5c35]/50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
+                <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-(--section)">
+                  <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
+                </div>
+                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]">TAMBÉM RECENTE</p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
+                <span aria-hidden="true" className="ml-auto text-lg text-[#ff5c35]">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
       </section>
 
       <section id="achados" className="border-y border-(--border) bg-(--section) py-16 sm:py-24">
