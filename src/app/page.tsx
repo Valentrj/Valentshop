@@ -16,6 +16,10 @@ const stats = [
   { value: "100%", label: "REAL" },
 ];
 
+const recentProducts = [...products]
+  .sort((first, second) => second.order - first.order)
+  .slice(0, 3);
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-(--page) text-(--ink)">
@@ -99,6 +103,27 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+        <div className="mb-5 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">NOVIDADES</p>
+            <h2 className="mt-1 text-2xl font-black tracking-[-.05em] sm:text-3xl">Últimos testes.</h2>
+          </div>
+          <a href="#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]">Ver todos</a>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {recentProducts.map((product) => (
+            <a key={product.id} href={product.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-(--border) bg-(--card) p-3 shadow-[0_8px_20px_rgba(27,33,30,0.04)] transition hover:-translate-y-0.5 hover:border-[#ff5c35]/50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
+              <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-(--section)">
+                <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
+              </div>
+              <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]">NOVO TESTE</p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
+              <span aria-hidden="true" className="ml-auto text-lg text-[#ff5c35]">↗</span>
+            </a>
+          ))}
         </div>
       </section>
 
