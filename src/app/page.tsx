@@ -4,6 +4,7 @@ import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 import SiteFooter from "@/components/site-footer";
+import { brands } from "@/data/brands";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
@@ -26,6 +27,7 @@ export default function Home() {
         <nav className="hidden items-center gap-7 text-sm font-semibold text-(--muted) md:flex" aria-label="Navegação principal">
           <a className="transition hover:text-[#ff5c35]" href="#achados">Produtos testados</a>
           <a className="transition hover:text-[#ff5c35]" href="#videos">Vídeos</a>
+          <a className="transition hover:text-[#ff5c35]" href="#marcas">Marcas</a>
           <a className="transition hover:text-[#ff5c35]" href="#parcerias">Parcerias</a>
         </nav>
         <div className="flex items-center gap-2"><ThemeToggle /><a className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!" href="#achados">Ver testes</a></div>
@@ -119,6 +121,27 @@ export default function Home() {
           </div>
           <div className="rounded-[2rem] border border-(--border) bg-(--card)/80 p-3 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-4">
             <VideoCarousel products={products} />
+          </div>
+        </div>
+      </section>
+
+      <section id="marcas" className="border-y border-(--border) bg-(--section) py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-9">
+            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">MARCAS EM DESTAQUE</p>
+            <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Explore por marca.</h2>
+            <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Escolha uma marca e encontre os vídeos e destaques reunidos em um só lugar.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {brands.map((brand, index) => (
+              <a key={brand.slug} href={`/marcas/${brand.slug}`} className="group relative flex min-h-52 overflow-hidden rounded-[1.7rem] border border-(--border) bg-(--card) p-5 shadow-[0_14px_30px_rgba(27,33,30,0.05)] transition hover:-translate-y-1 hover:border-[#ff5c35]/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
+                {brand.banner ? <Image src={brand.banner} alt={`Banner ${brand.name}`} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" /> : <div className={`absolute inset-0 ${index % 2 ? "bg-gradient-to-br from-[#cce6dc]/70 via-(--card) to-[#dcd4ff]/40" : "bg-gradient-to-br from-[#ffd8be]/70 via-(--card) to-[#d7f1e8]/50"}`} />}
+                <div className="relative z-10 mt-auto flex w-full items-end justify-between gap-3">
+                  <div><p className="text-[10px] font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS E DESTAQUES</p><h3 className="mt-1 text-2xl font-black tracking-[-.05em]">{brand.name}</h3></div>
+                  <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-[#1b211e] text-lg text-white transition group-hover:bg-[#ff5c35]">↗</span>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>

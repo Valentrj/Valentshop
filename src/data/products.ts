@@ -241,6 +241,30 @@ const productList: Product[] = [
     status: "Testado",
     order: 3,
   },
+  {
+    id: "webcam-emeet-smartcam-s600",
+    name: "Webcam EMEET SmartCam S600",
+    category: "Eletrônicos / Acessórios",
+    image: { placeholder: "/produtos/emeet-smartcam-s600-capa.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Demonstração da Webcam EMEET SmartCam S600.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSb7qvJEU/" }],
+    status: "Testado",
+    order: 18,
+  },
+  {
+    id: "mangueira-neon-led-vermelha",
+    name: "Mangueira de LED Vermelha",
+    category: "Casa / Iluminação",
+    image: { placeholder: "/produtos/mangueira-neon-led-capa.png", backgroundClass: "bg-[#ffd8be]" },
+    shortDescription: "Demonstração da mangueira de LED vermelha.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSb7bwb81/" }],
+    status: "Testado",
+    order: 19,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
