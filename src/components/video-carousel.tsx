@@ -44,17 +44,18 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
     >
       <div className="overflow-hidden rounded-[1.7rem] bg-[#1b211e] text-white shadow-xl shadow-[#1b211e]/10">
         <article className="grid sm:grid-cols-[.9fr_1.1fr]">
-          <div className="relative aspect-3/4 min-h-80">
+          <a href={primaryVideo} target="_blank" rel="noreferrer" aria-label={`Assistir demonstração de ${product.name} no TikTok`} className="group/image relative block aspect-3/4 min-h-80 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ff5c35]">
             <Image
               src={product.image.placeholder}
               alt={product.name}
               fill
               sizes="(min-width: 640px) 45vw, 100vw"
-              className="object-contain transition duration-500"
+              className="object-contain transition duration-500 group-hover/image:scale-[1.03]"
               priority
             />
             <span className="absolute left-4 top-4 rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black">TESTE 0{activeIndex + 1}</span>
-          </div>
+            <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-4 py-2.5 text-xs font-black text-white shadow-lg transition group-hover/image:bg-white group-hover/image:text-[#1b211e]">▶ Assistir vídeo</span>
+          </a>
           <div className="flex flex-col p-6 sm:p-8 lg:p-10">
             <p className="text-[10px] font-black tracking-[.14em] text-[#ff977d]">{product.category.toUpperCase()}</p>
             <h3 className="mt-3 max-w-lg text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{product.name}</h3>
