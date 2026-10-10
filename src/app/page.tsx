@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeFeaturedProducts from "@/components/home-featured-products";
-import VideoCarousel from "@/components/video-carousel";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 import SiteFooter from "@/components/site-footer";
@@ -33,7 +32,6 @@ export default function Home() {
         </a>
         <nav className="hidden items-center gap-7 text-sm font-semibold text-(--muted) md:flex" aria-label="Navegação principal">
           <a className="transition hover:text-[#ff5c35]" href="#achados">Produtos testados</a>
-          <a className="transition hover:text-[#ff5c35]" href="#videos">Vídeos</a>
           <a className="transition hover:text-[#ff5c35]" href="#marcas">Marcas</a>
           <a className="transition hover:text-[#ff5c35]" href="#parcerias">Parcerias</a>
         </nav>
@@ -120,7 +118,7 @@ export default function Home() {
         {featuredReview && (
           <article className="overflow-hidden rounded-[2rem] border border-(--border) bg-[#1b211e] text-white shadow-[0_20px_45px_rgba(27,33,30,0.14)]">
             <div className="grid lg:grid-cols-[.82fr_1.18fr]">
-              <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" aria-label={`Assistir review de ${featuredReview.name} no TikTok`} className={`${featuredReview.image.backgroundClass} group relative min-h-72 overflow-hidden sm:min-h-88 lg:min-h-full`}>
+              <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" aria-label={`Assistir review de ${featuredReview.name} no TikTok`} className="group relative min-h-72 overflow-hidden border-b border-white/10 bg-[#101512] sm:min-h-88 lg:min-h-full lg:border-b-0 lg:border-r">
                 <Image src={featuredReview.image.placeholder} alt={featuredReview.name} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]" />
                 <span className="absolute left-5 top-5 rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-white">NOVO TESTE</span>
               </a>
@@ -166,19 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="videos" className="py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9">
-            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">VÍDEOS DE DEMONSTRAÇÃO</p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja os produtos em ação.</h2>
-            <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Testes reais, mostrando como eles funcionam na prática.</p>
-          </div>
-          <div className="rounded-[2rem] border border-(--border) bg-(--card)/80 p-3 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-4">
-            <VideoCarousel products={products} />
-          </div>
-        </div>
-      </section>
-
       <section id="parcerias" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10">
         <div className="grid gap-8 rounded-[2rem] bg-[#ff5c35] p-7 text-white shadow-[0_24px_50px_rgba(255,92,53,0.22)] sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
           <div>
@@ -187,7 +172,7 @@ export default function Home() {
           </div>
           <div>
             <p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes reais e conteúdo para TikTok Shop, com foco em mostrar valor e gerar confiança.</p>
-            <div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><a href="#videos" className="rounded-full border border-white/30 px-3 py-2">Demonstração</a><a href="https://www.tiktok.com/@valentachados?lang=pt-BR" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</a><a href="https://www.tiktok.com/@valentshoprj" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</a></div>
+            <div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><a href="#achados" className="rounded-full border border-white/30 px-3 py-2">Produtos testados</a><a href="https://www.tiktok.com/@valentachados?lang=pt-BR" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</a><a href="https://www.tiktok.com/@valentshoprj" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</a></div>
             <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Quero anunciar meu produto <ArrowUpRight /></a>
           </div>
         </div>
