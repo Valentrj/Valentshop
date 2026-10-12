@@ -265,6 +265,18 @@ const productList: Product[] = [
     status: "Testado",
     order: 19,
   },
+  {
+    id: "fone-inova-4-em-1",
+    name: "Fone Inova 4 em 1",
+    category: "Eletrônicos / Acessórios",
+    image: { placeholder: "/produtos/invafones4em1.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Demonstração do fone Inova 4 em 1.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSb3v5D4u/" }],
+    status: "Testado",
+    order: 20,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
