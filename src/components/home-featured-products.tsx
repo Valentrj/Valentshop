@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import ProductCard from "@/components/product-card";
 import type { Product } from "@/data/products";
+import { useCategoryLabel } from "@/components/language-provider";
 
 type HomeFeaturedProductsProps = {
   products: Product[];
 };
 
 export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsProps) {
+  const categoryLabel = useCategoryLabel();
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const categories = ["Todos", "Mais comprados", ...new Set(products.map((product) => product.category))];
   const filteredProducts =
@@ -32,7 +34,7 @@ export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsP
             onClick={() => setSelectedCategory(category)}
             className={`premium-filter rounded-full px-4 py-2.5 text-sm font-bold shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${selectedCategory === category ? "bg-[#ff5c35] text-white shadow-[#ff5c35]/20" : "border border-(--border) bg-(--card) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
           >
-            {category}
+            {categoryLabel(category)}
           </button>
         ))}
       </div>

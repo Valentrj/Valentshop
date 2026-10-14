@@ -41,6 +41,15 @@ const messages = {
     "partners.description": "Produzo vídeos de demonstração, testes reais e conteúdo para TikTok Shop, com foco em mostrar valor e gerar confiança.",
     "partners.cta": "Quero anunciar meu produto",
     "footer.description": "Produtos testados e mostrados em vídeo.",
+    "filter.all": "Todos",
+    "filter.bestSellers": "Mais comprados",
+    "category.home": "Casa",
+    "category.clothing": "Vestuário",
+    "category.accessoriesGames": "Acessórios / Games",
+    "category.electronics": "Eletrônicos / Acessórios",
+    "category.supplements": "Suplementos",
+    "category.finds": "Achados",
+    "category.lighting": "Casa / Iluminação",
   },
   en: {
     "nav.products": "Tested products",
@@ -72,6 +81,15 @@ const messages = {
     "partners.description": "I produce product demos, real reviews and content for TikTok Shop, focused on showing value and building trust.",
     "partners.cta": "Promote my product",
     "footer.description": "Products tested and shown on video.",
+    "filter.all": "All",
+    "filter.bestSellers": "Best sellers",
+    "category.home": "Home",
+    "category.clothing": "Clothing",
+    "category.accessoriesGames": "Accessories / Games",
+    "category.electronics": "Electronics / Accessories",
+    "category.supplements": "Supplements",
+    "category.finds": "Finds",
+    "category.lighting": "Home / Lighting",
   },
   "zh-CN": {
     "nav.products": "测评产品",
@@ -103,10 +121,31 @@ const messages = {
     "partners.description": "我为 TikTok Shop 制作产品演示、真实测评和内容，帮助展示价值并建立信任。",
     "partners.cta": "推广我的产品",
     "footer.description": "产品均经过测试并以视频展示。",
+    "filter.all": "全部",
+    "filter.bestSellers": "热销产品",
+    "category.home": "家居",
+    "category.clothing": "服装",
+    "category.accessoriesGames": "配件 / 游戏",
+    "category.electronics": "电子产品 / 配件",
+    "category.supplements": "营养补充剂",
+    "category.finds": "好物推荐",
+    "category.lighting": "家居 / 照明",
   },
 } as const;
 
 export type TranslationKey = keyof (typeof messages)["pt-BR"];
+
+const categoryKeys: Record<string, TranslationKey> = {
+  Todos: "filter.all",
+  "Mais comprados": "filter.bestSellers",
+  Casa: "category.home",
+  Vestuário: "category.clothing",
+  "Acessórios / Games": "category.accessoriesGames",
+  "Eletrônicos / Acessórios": "category.electronics",
+  Suplementos: "category.supplements",
+  Achados: "category.finds",
+  "Casa / Iluminação": "category.lighting",
+};
 
 type LanguageContextValue = {
   locale: Locale;
@@ -143,6 +182,14 @@ export function useLanguage() {
   const context = useContext(LanguageContext);
   if (!context) throw new Error("useLanguage must be used inside LanguageProvider");
   return context;
+}
+
+export function useCategoryLabel() {
+  const { t } = useLanguage();
+  return (category: string) => {
+    const key = categoryKeys[category];
+    return key ? t(key) : category;
+  };
 }
 
 export function T({ id }: { id: TranslationKey }) {
