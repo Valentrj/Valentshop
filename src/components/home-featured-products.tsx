@@ -11,11 +11,13 @@ type HomeFeaturedProductsProps = {
 
 export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsProps) {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
-  const categories = ["Todos", ...new Set(products.map((product) => product.category))];
+  const categories = ["Todos", "Mais comprados", ...new Set(products.map((product) => product.category))];
   const filteredProducts =
     selectedCategory === "Todos"
       ? products
-      : products.filter((product) => product.category === selectedCategory);
+      : selectedCategory === "Mais comprados"
+        ? products.filter((product) => product.bestSeller)
+        : products.filter((product) => product.category === selectedCategory);
 
   const visibleProducts = filteredProducts.slice(0, 3);
 

@@ -23,6 +23,7 @@ export type Product = {
   order: number;
   featured?: boolean;
   showInRecent?: boolean;
+  bestSeller?: boolean;
 };
 
 const productList: Product[] = [
@@ -51,6 +52,7 @@ const productList: Product[] = [
     status: "Testado",
     order: 2,
     featured: false,
+    bestSeller: true,
   },
   {
     id: "luminaria-mesa-led-touch",
@@ -79,6 +81,7 @@ const productList: Product[] = [
     ],
     status: "Testado",
     order: 1,
+    bestSeller: true,
   },
   {
     id: "aspirador-de-po-portatil",
@@ -241,6 +244,7 @@ const productList: Product[] = [
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSbfjYNLM/" }],
     status: "Testado",
     order: 3,
+    bestSeller: true,
   },
   {
     id: "webcam-emeet-smartcam-s600",

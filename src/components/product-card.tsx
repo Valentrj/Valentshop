@@ -28,6 +28,9 @@ export default function ProductCard({ product, index }: ProductCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/20" />
           <span className="absolute left-3 top-3 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black text-[#1b211e] shadow-sm backdrop-blur-sm">TESTE 0{index + 1}</span>
+          {product.bestSeller && (
+            <span className="absolute bottom-3 left-3 rounded-full bg-[#ff5c35] px-2.5 py-1 text-[10px] font-black tracking-[.08em] text-white shadow-md">MAIS COMPRADO</span>
+          )}
         </a>
         <FavoriteButton productId={product.id} productName={product.name} />
       </div>
