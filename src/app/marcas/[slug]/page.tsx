@@ -5,6 +5,7 @@ import SiteFooter from "@/components/site-footer";
 import ThemeToggle from "@/app/theme-toggle";
 import { brands } from "@/data/brands";
 import { products } from "@/data/products";
+import LanguageSelector from "@/components/language-selector";
 
 export function generateStaticParams() {
   return brands.map((brand) => ({ slug: brand.slug }));
@@ -22,7 +23,7 @@ export default async function BrandPage({ params }: PageProps<"/marcas/[slug]">)
           <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white">V</span>
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </Link>
-        <div className="flex items-center gap-2"><ThemeToggle /><Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white!" href="/#marcas">Ver marcas</Link></div>
+        <div className="flex items-center gap-2"><LanguageSelector /><ThemeToggle /><Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white!" href="/#marcas">Ver marcas</Link></div>
       </header>
 
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12 lg:px-10">

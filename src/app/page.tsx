@@ -6,6 +6,8 @@ import ThemeToggle from "@/app/theme-toggle";
 import SiteFooter from "@/components/site-footer";
 import { brands } from "@/data/brands";
 import LiveStatus from "@/components/live-status";
+import LanguageSelector from "@/components/language-selector";
+import { T } from "@/components/language-provider";
 
 function ArrowUpRight() {
   return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
@@ -33,11 +35,11 @@ export default function Home() {
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </a>
         <nav className="hidden items-center gap-7 text-sm font-semibold text-(--muted) md:flex" aria-label="Navegação principal">
-          <a className="transition hover:text-[#ff5c35]" href="#achados">Produtos testados</a>
-          <a className="transition hover:text-[#ff5c35]" href="#marcas">Marcas</a>
-          <a className="transition hover:text-[#ff5c35]" href="#parcerias">Parcerias</a>
+          <a className="transition hover:text-[#ff5c35]" href="#achados"><T id="nav.products" /></a>
+          <a className="transition hover:text-[#ff5c35]" href="#marcas"><T id="nav.brands" /></a>
+          <a className="transition hover:text-[#ff5c35]" href="#parcerias"><T id="nav.partnerships" /></a>
         </nav>
-        <div className="flex items-center gap-2"><ThemeToggle /><a className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!" href="#achados">Ver testes</a></div>
+        <div className="flex items-center gap-2"><LanguageSelector /><ThemeToggle /><a className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!" href="#achados"><T id="nav.seeTests" /></a></div>
       </header>
 
       <section id="inicio" className="relative mx-auto max-w-6xl px-5 pb-12 pt-12 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pt-24">
@@ -47,16 +49,16 @@ export default function Home() {
         <div className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff5c35]/20 bg-[#fff2ee] px-3 py-1.5 text-[10px] font-black tracking-[0.16em] text-[#ff5c35] shadow-sm">
-              <span className="size-2 rounded-full bg-[#ff5c35]" />PRODUTOS EM AÇÃO
+              <span className="size-2 rounded-full bg-[#ff5c35]" /><T id="hero.eyebrow" />
             </div>
             <h1 className="max-w-3xl text-5xl font-black leading-[0.82] tracking-[-0.082em] sm:text-7xl lg:text-8xl">Valent<br /><em className="font-serif font-normal tracking-[-0.09em] text-[#ff5c35]">Shop.</em></h1>
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl">Produtos reais, testados na prática e <strong className="font-extrabold text-(--ink)">aprovados antes de recomendar.</strong></p>
-            <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)">Eu testo, uso e mostro cada produto de verdade antes de indicar para você.</p>
+            <p className="mt-7 max-w-md text-lg leading-relaxed text-(--muted) sm:text-xl"><T id="hero.description" /></p>
+            <p className="mt-3 max-w-md text-base leading-relaxed text-(--copy)"><T id="hero.detail" /></p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]">Ver produtos testados <ArrowUpRight /></a>
-              <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card)/80 px-5 py-3.5 text-sm font-bold text-(--ink) shadow-[0_10px_22px_rgba(27,33,30,0.04)] hover:border-[#ff5c35] hover:text-[#ff5c35]">Falar no WhatsApp</a>
+              <a href="#achados" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,92,53,0.28)] hover:bg-[#e34a27]"><T id="hero.cta" /> <ArrowUpRight /></a>
+              <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card)/80 px-5 py-3.5 text-sm font-bold text-(--ink) shadow-[0_10px_22px_rgba(27,33,30,0.04)] hover:border-[#ff5c35] hover:text-[#ff5c35]"><T id="hero.whatsapp" /></a>
             </div>
-            <a href="#marcas" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#ff5c35] transition hover:text-[#e34a27]">Conheça as marcas em destaque <span aria-hidden="true">↓</span></a>
+            <a href="#marcas" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#ff5c35] transition hover:text-[#e34a27]"><T id="hero.brands" /> <span aria-hidden="true">↓</span></a>
 
             <div className="mt-8 grid max-w-lg gap-3 sm:grid-cols-3">
               {stats.map((stat) => (
@@ -93,11 +95,11 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
             <div>
-              <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">MARCAS EM DESTAQUE</p>
-              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Explore por marca.</h2>
-              <p className="mt-2 max-w-md leading-relaxed text-(--copy)">Vídeos e produtos de cada marca reunidos em um só lugar.</p>
+              <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]"><T id="brands.eyebrow" /></p>
+              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl"><T id="brands.title" /></h2>
+              <p className="mt-2 max-w-md leading-relaxed text-(--copy)"><T id="brands.description" /></p>
             </div>
-            <span className="hidden shrink-0 text-sm font-semibold text-(--muted) sm:block">Toque para explorar ↗</span>
+            <span className="hidden shrink-0 text-sm font-semibold text-(--muted) sm:block"><T id="brands.hint" /></span>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-3">
             {brands.map((brand) => (
@@ -113,25 +115,25 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">REVIEW EM DESTAQUE</p>
-            <h2 className="mt-1 text-2xl font-black tracking-[-.05em] sm:text-3xl">O teste mais recente.</h2>
+            <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]"><T id="recent.eyebrow" /></p>
+            <h2 className="mt-1 text-2xl font-black tracking-[-.05em] sm:text-3xl"><T id="recent.title" /></h2>
           </div>
-          <a href="#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]">Ver todos</a>
+          <a href="#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]"><T id="recent.all" /></a>
         </div>
         {featuredReview && (
           <article className="overflow-hidden rounded-[2rem] border border-(--border) bg-[#1b211e] text-white shadow-[0_20px_45px_rgba(27,33,30,0.14)]">
             <div className="grid lg:grid-cols-[.82fr_1.18fr]">
               <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" aria-label={`Assistir review de ${featuredReview.name} no TikTok`} className="group relative min-h-72 overflow-hidden border-b border-white/10 bg-[#101512] sm:min-h-88 lg:min-h-full lg:border-b-0 lg:border-r">
                 <Image src={featuredReview.image.placeholder} alt={featuredReview.name} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]" />
-                <span className="absolute left-5 top-5 rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-white">NOVO TESTE</span>
+                <span className="absolute left-5 top-5 rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-white"><T id="recent.new" /></span>
               </a>
               <div className="flex flex-col p-7 sm:p-10">
                 <p className="text-[10px] font-black tracking-[.16em] text-[#ff977d]">{featuredReview.category.toUpperCase()}</p>
                 <h3 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">{featuredReview.name}</h3>
                 <p className="mt-5 max-w-lg leading-relaxed text-[#c4cec8]">{featuredReview.shortDescription}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white hover:bg-[#e34a27]">Assistir review <ArrowUpRight /></a>
-                  <Link href={`/produtos/${featuredReview.id}`} className="premium-cta inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-bold text-white transition hover:border-[#ff977d] hover:text-[#ff977d]">Ver produto <ArrowUpRight /></Link>
+                  <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="premium-cta inline-flex items-center gap-2 rounded-full bg-[#ff5c35] px-5 py-3.5 text-sm font-bold text-white hover:bg-[#e34a27]"><T id="recent.watch" /> <ArrowUpRight /></a>
+                  <Link href={`/produtos/${featuredReview.id}`} className="premium-cta inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-bold text-white transition hover:border-[#ff977d] hover:text-[#ff977d]"><T id="recent.product" /> <ArrowUpRight /></Link>
                 </div>
               </div>
             </div>
@@ -144,7 +146,7 @@ export default function Home() {
                 <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-(--section)">
                   <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
                 </div>
-                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]">TAMBÉM RECENTE</p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
+                <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]"><T id="recent.also" /></p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
                 <span aria-hidden="true" className="ml-auto text-lg text-[#ff5c35]">↗</span>
               </a>
             ))}
@@ -156,9 +158,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-9 flex items-end justify-between gap-5">
             <div>
-              <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">TESTADO POR MIM</p>
-              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Produtos que passei a testar e aprovar.</h2>
-              <p className="mt-3 max-w-md leading-relaxed text-(--copy)">Veja os produtos que já passaram pelos meus testes e revisão real.</p>
+              <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]"><T id="tested.eyebrow" /></p>
+              <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl"><T id="tested.title" /></h2>
+              <p className="mt-3 max-w-md leading-relaxed text-(--copy)"><T id="tested.description" /></p>
             </div>
           </div>
           <div className="rounded-[2rem] border border-(--border) bg-gradient-to-b from-(--card) to-(--section) p-4 shadow-[0_18px_35px_rgba(27,33,30,0.04)] sm:p-5">
@@ -170,13 +172,13 @@ export default function Home() {
       <section id="parcerias" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10">
         <div className="grid gap-8 rounded-[2rem] bg-[#ff5c35] p-7 text-white shadow-[0_24px_50px_rgba(255,92,53,0.22)] sm:p-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
           <div>
-            <p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]">PARA MARCAS E LOJAS</p>
-            <h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl">Conteúdo que mostra seu produto com clareza e impacto.</h2>
+            <p className="text-xs font-black tracking-[.16em] text-[#ffd1c3]"><T id="partners.eyebrow" /></p>
+            <h2 className="mt-3 max-w-xl text-3xl font-black leading-[.95] tracking-[-.06em] sm:text-5xl"><T id="partners.title" /></h2>
           </div>
           <div>
-            <p className="leading-relaxed text-[#ffe0d7]">Produzo vídeos de demonstração, testes reais e conteúdo para TikTok Shop, com foco em mostrar valor e gerar confiança.</p>
+            <p className="leading-relaxed text-[#ffe0d7]"><T id="partners.description" /></p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs font-black"><a href="#achados" className="rounded-full border border-white/30 px-3 py-2">Produtos testados</a><a href="https://www.tiktok.com/@valentachados?lang=pt-BR" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">TikTok Shop</a><a href="https://www.tiktok.com/@valentshoprj" target="_blank" rel="noreferrer" className="rounded-full border border-white/30 px-3 py-2">Vídeos & lives</a></div>
-            <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!">Quero anunciar meu produto <ArrowUpRight /></a>
+            <a href="https://wa.me/5521994270888" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1b211e]! transition hover:bg-[#ffe772] hover:text-[#1b211e]! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white focus-visible:text-[#1b211e]!"><T id="partners.cta" /> <ArrowUpRight /></a>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import ProductFilterGrid from "@/components/product-filter-grid";
 import { products } from "@/data/products";
 import ThemeToggle from "@/app/theme-toggle";
 import SiteFooter from "@/components/site-footer";
+import LanguageSelector from "@/components/language-selector";
 
 export default function ProductsPage() {
   return (
@@ -14,7 +15,7 @@ export default function ProductsPage() {
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </Link>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <LanguageSelector /><ThemeToggle />
           <Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white!" href="/#achados">Voltar para início</Link>
         </div>
       </header>

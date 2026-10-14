@@ -8,6 +8,7 @@ import ProductVideoShowcase from "@/components/product-video-showcase";
 import ProductVideoTopLink from "@/components/product-video-top-link";
 import { ProductVideoProvider } from "@/components/product-video-context";
 import SiteFooter from "@/components/site-footer";
+import LanguageSelector from "@/components/language-selector";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
@@ -77,7 +78,7 @@ export default async function ProductPage({
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </Link>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <LanguageSelector /><ThemeToggle />
           <Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!" href="/#achados">Ver testes</Link>
         </div>
       </header>
