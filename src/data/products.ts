@@ -22,6 +22,7 @@ export type Product = {
   verdict?: "Recomendo" | "Vale com ressalvas";
   order: number;
   featured?: boolean;
+  showInRecent?: boolean;
 };
 
 const productList: Product[] = [
@@ -292,6 +293,19 @@ const productList: Product[] = [
     ],
     status: "Testado",
     order: 21,
+    showInRecent: false,
+  },
+  {
+    id: "smartwatch-xiaomi-redmi-watch-5-lite",
+    name: "Smartwatch Xiaomi Redmi Watch 5 Lite",
+    category: "Eletrônicos / Acessórios",
+    image: { placeholder: "/produtos/Smartwatch Xiaomi Redmi Watch 5 Lite.png", backgroundClass: "bg-[#d7f1e8]" },
+    shortDescription: "Demonstração do Smartwatch Xiaomi Redmi Watch 5 Lite.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgeKBWxx/" }],
+    status: "Testado",
+    order: 22,
   },
 ];
 

@@ -17,7 +17,8 @@ const stats = [
   { value: "100%", label: "REAL" },
 ];
 
-const recentProducts = [...products]
+const recentProducts = products
+  .filter((product) => product.showInRecent !== false)
   .sort((first, second) => second.order - first.order)
   .slice(0, 3);
 const featuredReview = recentProducts[0];
