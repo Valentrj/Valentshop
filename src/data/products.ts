@@ -277,6 +277,22 @@ const productList: Product[] = [
     status: "Testado",
     order: 20,
   },
+  {
+    id: "suplementos-zoruna",
+    name: "Suplementos Zoruna",
+    category: "Suplementos",
+    image: { placeholder: "/produtos/Suplementos Zoruna_ Nutrição que Eleva.png", backgroundClass: "bg-[#dcd4ff]" },
+    shortDescription: "Três opções da Zoruna reunidas: Vitamina D3 + K2, Magnésio 7 MAG e Complexo B.",
+    price: "Preço pendente",
+    productLink: "[Link do produto pendente]",
+    videos: [
+      { title: "Vitamina D3 + K2", videoLink: "https://vt.tiktok.com/ZSgewvMR7/" },
+      { title: "Magnésio 7 MAG", videoLink: "https://vt.tiktok.com/ZSgewVGTF/" },
+      { title: "Complexo B — 8 vitaminas", videoLink: "https://vt.tiktok.com/ZSgewX3hK/" },
+    ],
+    status: "Testado",
+    order: 21,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
