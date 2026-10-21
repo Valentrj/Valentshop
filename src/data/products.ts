@@ -22,7 +22,6 @@ export type Product = {
   verdict?: "Recomendo" | "Vale com ressalvas";
   order: number;
   featured?: boolean;
-  showInRecent?: boolean;
   bestSeller?: boolean;
 };
 
@@ -297,7 +296,6 @@ const productList: Product[] = [
     ],
     status: "Testado",
     order: 21,
-    showInRecent: false,
   },
   {
     id: "smartwatch-xiaomi-redmi-watch-5-lite",
@@ -325,7 +323,6 @@ const productList: Product[] = [
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJ5XfX/" }],
     status: "Testado",
     order: 23,
-    showInRecent: false,
   },
   {
     id: "fone-supermini-inova",
@@ -338,7 +335,6 @@ const productList: Product[] = [
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJfhwT/" }],
     status: "Testado",
     order: 24,
-    showInRecent: false,
   },
   {
     id: "mini-ventilador-de-teto",
@@ -351,7 +347,6 @@ const productList: Product[] = [
     videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJ6Ttc/" }],
     status: "Testado",
     order: 25,
-    showInRecent: false,
   },
 ];
 
