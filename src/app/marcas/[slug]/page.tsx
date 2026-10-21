@@ -50,7 +50,7 @@ export default async function BrandPage({ params }: PageProps<"/marcas/[slug]">)
                   return (
                     <article key={video.videoLink} className="rounded-2xl border border-(--border) bg-(--section) p-4">
                       <div className="flex items-center gap-4">
-                        {product && (
+                        {product && product.image && (
                           <Link href={`/produtos/${product.id}`} className="relative size-18 shrink-0 overflow-hidden rounded-xl border border-(--border) bg-(--card) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]" aria-label={`Ver produto ${product.name}`}>
                             <Image src={product.image.placeholder} alt={product.name} fill sizes="72px" className="object-contain p-1" />
                           </Link>

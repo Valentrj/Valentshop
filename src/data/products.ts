@@ -13,7 +13,7 @@ export type Product = {
   id: string;
   name: string;
   category: string;
-  image: ProductImage;
+  image?: ProductImage;
   shortDescription: string;
   price: string;
   productLink: string;
@@ -306,10 +306,49 @@ const productList: Product[] = [
     image: { placeholder: "/produtos/Smartwatch Xiaomi Redmi Watch 5 Lite.png", backgroundClass: "bg-[#d7f1e8]" },
     shortDescription: "Demonstração do Smartwatch Xiaomi Redmi Watch 5 Lite.",
     price: "Preço pendente",
-    productLink: "[Link do produto pendente]",
-    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgeKBWxx/" }],
+    productLink: "https://vt.tiktok.com/ZS9Ut8o6KcmpP-1lsYr/",
+    videos: [
+      { title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgeKBWxx/" },
+      { title: "Demonstração 2", videoLink: "https://vt.tiktok.com/ZSgyJSoty/" },
+    ],
     status: "Testado",
     order: 22,
+  },
+  {
+    id: "fone-esportivo-inova",
+    name: "Fone Esportivo Inova",
+    category: "Eletrônicos / Acessórios",
+    shortDescription: "",
+    price: "Preço pendente",
+    productLink: "https://vt.tiktok.com/ZS9Ut8c8CDRrw-7D9T7/",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJ5XfX/" }],
+    status: "Testado",
+    order: 23,
+    showInRecent: false,
+  },
+  {
+    id: "fone-supermini-inova",
+    name: "Fone Supermini Inova",
+    category: "Eletrônicos / Acessórios",
+    shortDescription: "",
+    price: "Preço pendente",
+    productLink: "https://vt.tiktok.com/ZS9Ut8oQLeqBt-hinIC/",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJfhwT/" }],
+    status: "Testado",
+    order: 24,
+    showInRecent: false,
+  },
+  {
+    id: "mini-ventilador-de-teto",
+    name: "Mini Ventilador de Teto",
+    category: "Casa",
+    shortDescription: "",
+    price: "Preço pendente",
+    productLink: "https://vt.tiktok.com/ZS9UtL1H7VkEX-8ei7f/",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSgyJ6Ttc/" }],
+    status: "Testado",
+    order: 25,
+    showInRecent: false,
   },
 ];
 

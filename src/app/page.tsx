@@ -124,7 +124,11 @@ export default function Home() {
           <article className="overflow-hidden rounded-[2rem] border border-(--border) bg-[#1b211e] text-white shadow-[0_20px_45px_rgba(27,33,30,0.14)]">
             <div className="grid lg:grid-cols-[.82fr_1.18fr]">
               <a href={featuredReview.videos[0]?.videoLink} target="_blank" rel="noreferrer" aria-label={`Assistir review de ${featuredReview.name} no TikTok`} className="group relative min-h-72 overflow-hidden border-b border-white/10 bg-[#101512] sm:min-h-88 lg:min-h-full lg:border-b-0 lg:border-r">
-                <Image src={featuredReview.image.placeholder} alt={featuredReview.name} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]" />
+                {featuredReview.image ? (
+                  <Image src={featuredReview.image.placeholder} alt={featuredReview.name} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]" />
+                ) : (
+                  <div className="flex h-full items-end bg-gradient-to-br from-[#ff5c35]/15 via-transparent to-[#cce6dc]/40 p-7 text-3xl font-black tracking-[-.06em]">{featuredReview.name}</div>
+                )}
                 <span className="absolute left-5 top-5 rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-[.12em] text-white"><T id="recent.new" /></span>
               </a>
               <div className="flex flex-col p-7 sm:p-10">
@@ -144,7 +148,11 @@ export default function Home() {
             {supportingRecentProducts.map((product) => (
               <a key={product.id} href={product.videos[0]?.videoLink} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-2xl border border-(--border) bg-(--card) p-3 shadow-[0_8px_20px_rgba(27,33,30,0.04)] transition hover:-translate-y-0.5 hover:border-[#ff5c35]/50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]">
                 <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-(--section)">
-                  <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
+                  {product.image ? (
+                    <Image src={product.image.placeholder} alt={product.name} fill sizes="64px" className="object-cover transition duration-300 group-hover:scale-105" />
+                  ) : (
+                    <span className="grid h-full place-items-center px-2 text-center text-[9px] font-black leading-tight">{product.name}</span>
+                  )}
                 </div>
                 <div className="min-w-0"><p className="text-[10px] font-black tracking-[.12em] text-[#ff5c35]"><T id="recent.also" /></p><h3 className="mt-1 line-clamp-2 text-sm font-black leading-snug">{product.name}</h3></div>
                 <span aria-hidden="true" className="ml-auto text-lg text-[#ff5c35]">↗</span>

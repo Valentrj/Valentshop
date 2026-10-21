@@ -33,13 +33,13 @@ export async function generateMetadata({
       title: `${product.name} | Valent Shop`,
       description: product.shortDescription,
       type: "article",
-      images: [{ url: product.image.placeholder, alt: product.name }],
+      ...(product.image ? { images: [{ url: product.image.placeholder, alt: product.name }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: `${product.name} | Valent Shop`,
       description: product.shortDescription,
-      images: [product.image.placeholder],
+      ...(product.image ? { images: [product.image.placeholder] } : {}),
     },
   };
 }
@@ -84,14 +84,12 @@ export default async function ProductPage({
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-8 pt-8 sm:px-8 sm:pb-12 sm:pt-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:px-10">
-        <div className={`${product.image.backgroundClass} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-[#1b211e]/15 ring-1 ring-black/5 sm:p-4`}>
-          <Image
-            src={product.image.placeholder}
-            alt={product.name}
-            fill
-            sizes="(min-width: 1024px) 42vw, 100vw"
-            className="rounded-[1.5rem] object-cover"
-          />
+        <div className={`${product.image?.backgroundClass ?? "bg-(--section)"} relative mx-auto aspect-3/4 w-full max-w-xl overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-[#1b211e]/15 ring-1 ring-black/5 sm:p-4`}>
+          {product.image ? (
+            <Image src={product.image.placeholder} alt={product.name} fill sizes="(min-width: 1024px) 42vw, 100vw" className="rounded-[1.5rem] object-cover" />
+          ) : (
+            <div className="flex h-full items-end rounded-[1.5rem] bg-gradient-to-br from-[#ff5c35]/15 via-transparent to-[#cce6dc]/40 p-8"><span className="text-3xl font-black tracking-[-.06em]">{product.name}</span></div>
+          )}
         </div>
 
         <div className="max-w-xl">

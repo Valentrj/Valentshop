@@ -45,14 +45,11 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
       <div className="overflow-hidden rounded-[1.7rem] bg-[#1b211e] text-white shadow-xl shadow-[#1b211e]/10">
         <article className="grid sm:grid-cols-[.9fr_1.1fr]">
           <a href={primaryVideo} target="_blank" rel="noreferrer" aria-label={`Assistir demonstração de ${product.name} no TikTok`} className="group/image relative block aspect-3/4 min-h-80 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ff5c35]">
-            <Image
-              src={product.image.placeholder}
-              alt={product.name}
-              fill
-              sizes="(min-width: 640px) 45vw, 100vw"
-              className="object-contain transition duration-500 group-hover/image:scale-[1.03]"
-              priority
-            />
+            {product.image ? (
+              <Image src={product.image.placeholder} alt={product.name} fill sizes="(min-width: 640px) 45vw, 100vw" className="object-contain transition duration-500 group-hover/image:scale-[1.03]" priority />
+            ) : (
+              <div className="flex h-full items-end bg-gradient-to-br from-[#ff5c35]/15 via-transparent to-[#cce6dc]/40 p-6"><span className="text-xl font-black tracking-[-.05em] text-white">{product.name}</span></div>
+            )}
             <span className="absolute left-4 top-4 rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black">TESTE 0{activeIndex + 1}</span>
           </a>
           <div className="flex flex-col p-6 sm:p-8 lg:p-10">
