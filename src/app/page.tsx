@@ -76,7 +76,7 @@ export default function Home() {
                 <div className="absolute -right-16 -top-16 size-48 rounded-full bg-[#ff5c35]/15 blur-2xl" />
                 <span className="relative z-10 self-start rounded-full bg-[#ff5c35] px-3 py-1.5 text-[10px] font-black tracking-widest text-white">POR TRÁS DOS TESTES</span>
                 <LiveStatus />
-                <div className="relative z-10 mx-auto my-auto aspect-square w-full max-w-88 overflow-hidden rounded-[1.75rem] border border-white/15 shadow-[0_0_45px_rgba(255,92,53,0.25)]">
+                <div className="relative z-10 mx-auto my-auto aspect-square w-full max-w-88 overflow-hidden rounded-full border border-white/15 shadow-[0_0_45px_rgba(255,92,53,0.25)]">
                   <Image src="/perfil-valent3.png" alt="Valent, criador do Valent Shop" fill sizes="(min-width: 1024px) 22rem, 80vw" className="object-contain object-center" priority />
                 </div>
                 <div className="relative z-10 mt-5 flex flex-wrap gap-2 text-[10px] font-black tracking-wide text-white">
