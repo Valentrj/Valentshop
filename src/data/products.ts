@@ -254,7 +254,7 @@ const productList: Product[] = [
     shortDescription: "Demonstração da Webcam EMEET SmartCam S600.",
     price: "Preço pendente",
     productLink: "https://vt.tiktok.com/ZS9D3Uo8kyxRp-zhlaz/",
-    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSb7qvJEU/" }],
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSb7qvJEU/" }, { title: "Demonstração 2", videoLink: "https://www.tiktok.com/@valentachados/video/7697333249135136008", id: "7697333249135136008" }],
     status: "Testado",
     order: 18,
   },
