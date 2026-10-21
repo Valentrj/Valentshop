@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     description: "Achados, testes e produtos que valem a pena.",
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/perfil-valent2.png", alt: "Valent, criador do Valent Shop" }],
+    images: [{ url: "/perfil-valent3.png", alt: "Valent, criador do Valent Shop" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Valent Shop | Achados que valem a pena",
     description: "Achados, testes e produtos que valem a pena.",
-    images: ["/perfil-valent2.png"],
+    images: ["/perfil-valent3.png"],
   },
 };
 
