@@ -348,6 +348,18 @@ const productList: Product[] = [
     status: "Testado",
     order: 25,
   },
+  {
+    id: "caixa-de-som-por-inducao-tomate-mtg-272",
+    name: "Caixa de Som por Indução Tomate MTG-272",
+    category: "Eletrônicos / Áudio",
+    image: { placeholder: "/produtos/caixatomate.png", backgroundClass: "bg-[#111827]" },
+    shortDescription: "Caixa de som por indução Tomate MTG-272.",
+    price: "Preço pendente",
+    productLink: "https://vt.tiktok.com/ZS9UExcYpTQJ8-uF2Sl/",
+    videos: [{ title: "Demonstração", videoLink: "https://vt.tiktok.com/ZSguSUTUS/", id: "7699271474925866258" }],
+    status: "Testado",
+    order: 26,
+  },
 ];
 
 export const products = [...productList].sort((first, second) => first.order - second.order);
