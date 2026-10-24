@@ -64,7 +64,7 @@ export default async function ProductPage({
   );
 
   const productCtaClassName =
-    "inline-flex items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]";
+    "inline-flex items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037]";
 
   const productVideos = product.videos;
   const whatsappUrl = `https://wa.me/5521994270888?text=${encodeURIComponent(`Olá! Vi o teste de ${product.name} no Valent Shop e gostaria de tirar uma dúvida.`)}`;
@@ -74,12 +74,12 @@ export default async function ProductPage({
       <main className="min-h-screen overflow-hidden bg-(--page) text-(--ink)">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Valent Shop, início">
-          <span className="grid size-9 place-items-center rounded-full bg-[#ff5c35] text-base font-black text-white">V</span>
+          <span className="grid size-9 place-items-center rounded-full bg-[#c45037] text-base font-black text-white">V</span>
           <span className="text-lg font-black tracking-[-0.06em]">Valent Shop</span>
         </Link>
         <div className="flex items-center gap-2">
           <LanguageSelector /><ThemeToggle />
-          <Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] focus-visible:text-white!" href="/#achados">Ver testes</Link>
+          <Link className="rounded-full bg-[#1b211e] px-4 py-2.5 text-sm font-bold text-white! transition hover:bg-[#c45037] hover:text-white! focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037] focus-visible:text-white!" href="/#achados">Ver testes</Link>
         </div>
       </header>
 
@@ -88,15 +88,15 @@ export default async function ProductPage({
           {product.image ? (
             <Image src={product.image.placeholder} alt={product.name} fill sizes="(min-width: 1024px) 42vw, 100vw" className="rounded-[1.5rem] object-cover" />
           ) : (
-            <div className="flex h-full items-end rounded-[1.5rem] bg-gradient-to-br from-[#ff5c35]/15 via-transparent to-[#cce6dc]/40 p-8"><span className="text-3xl font-black tracking-[-.06em]">{product.name}</span></div>
+            <div className="flex h-full items-end rounded-[1.5rem] bg-gradient-to-br from-[#c45037]/15 via-transparent to-[#cce6dc]/40 p-8"><span className="text-3xl font-black tracking-[-.06em]">{product.name}</span></div>
           )}
         </div>
 
         <div className="max-w-xl">
-          <Link href="/#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#ff5c35]">← Voltar para produtos</Link>
+          <Link href="/#achados" className="text-sm font-bold text-(--muted) underline underline-offset-4 transition hover:text-[#c45037]">← Voltar para produtos</Link>
           <div className="mt-8 flex flex-wrap items-center gap-3 text-xs font-black tracking-[.16em]">
-            <p className="text-[#ff5c35]">{product.status.toUpperCase()}</p>
-            <span className="size-1 rounded-full bg-[#ff5c35]" />
+            <p className="text-[#c45037]">{product.status.toUpperCase()}</p>
+            <span className="size-1 rounded-full bg-[#c45037]" />
             <p className="text-(--muted)">{product.category.toUpperCase()}</p>
           </div>
           <h1 className="mt-2 text-4xl font-black leading-[.95] tracking-[-.06em] sm:text-6xl">{product.name}</h1>
@@ -120,7 +120,7 @@ export default async function ProductPage({
               Tirar dúvida no WhatsApp
             </a>
             {hasValidProductLink ? (
-              <a href={product.productLink} target="_blank" rel="noreferrer" className={`${productCtaClassName} bg-[#1b211e] text-white! transition hover:bg-[#ff5c35] hover:text-white! focus-visible:outline-[#ff5c35]`}>
+              <a href={product.productLink} target="_blank" rel="noreferrer" className={`${productCtaClassName} bg-[#1b211e] text-white! transition hover:bg-[#c45037] hover:text-white! focus-visible:outline-[#c45037]`}>
                 Ver produto
               </a>
             ) : (
@@ -128,7 +128,7 @@ export default async function ProductPage({
                 Link em breve
               </span>
             )}
-            <Link href="/produtos" className={`${productCtaClassName} border border-(--border) bg-transparent text-(--ink) transition hover:border-[#ff5c35] hover:text-[#ff5c35]`}>
+            <Link href="/produtos" className={`${productCtaClassName} border border-(--border) bg-transparent text-(--ink) transition hover:border-[#c45037] hover:text-[#c45037]`}>
               Ver outros testes
             </Link>
           </div>
@@ -137,7 +137,7 @@ export default async function ProductPage({
 
       <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24 lg:px-10">
         <div>
-          <p className="text-xs font-black tracking-[.16em] text-[#ff5c35]">DEMONSTRAÇÃO</p>
+          <p className="text-xs font-black tracking-[.16em] text-[#c45037]">DEMONSTRAÇÃO</p>
           <h2 className="mt-2 text-3xl font-black tracking-[-.06em] sm:text-4xl">Veja o produto em ação.</h2>
           <ProductVideoShowcase videos={productVideos} />
         </div>

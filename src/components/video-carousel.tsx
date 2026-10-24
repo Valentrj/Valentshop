@@ -44,23 +44,23 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
     >
       <div className="overflow-hidden rounded-[1.7rem] bg-[#1b211e] text-white shadow-xl shadow-[#1b211e]/10">
         <article className="grid sm:grid-cols-[.9fr_1.1fr]">
-          <a href={primaryVideo} target="_blank" rel="noreferrer" aria-label={`Assistir demonstração de ${product.name} no TikTok`} className="group/image relative block aspect-3/4 min-h-80 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ff5c35]">
+          <a href={primaryVideo} target="_blank" rel="noreferrer" aria-label={`Assistir demonstração de ${product.name} no TikTok`} className="group/image relative block aspect-3/4 min-h-80 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#c45037]">
             {product.image ? (
               <Image src={product.image.placeholder} alt={product.name} fill sizes="(min-width: 640px) 45vw, 100vw" className="object-contain transition duration-500 group-hover/image:scale-[1.03]" priority />
             ) : (
-              <div className="flex h-full items-end bg-gradient-to-br from-[#ff5c35]/15 via-transparent to-[#cce6dc]/40 p-6"><span className="text-xl font-black tracking-[-.05em] text-white">{product.name}</span></div>
+              <div className="flex h-full items-end bg-gradient-to-br from-[#c45037]/15 via-transparent to-[#cce6dc]/40 p-6"><span className="text-xl font-black tracking-[-.05em] text-white">{product.name}</span></div>
             )}
             <span className="absolute left-4 top-4 rounded-full bg-[#1b211e] px-3 py-1.5 text-[10px] font-black">TESTE 0{activeIndex + 1}</span>
           </a>
           <div className="flex flex-col p-6 sm:p-8 lg:p-10">
-            <p className="text-[10px] font-black tracking-[.14em] text-[#ff977d]">{product.category.toUpperCase()}</p>
+            <p className="text-[10px] font-black tracking-[.14em] text-[#f0aa98]">{product.category.toUpperCase()}</p>
             <h3 className="mt-3 max-w-lg text-3xl font-black leading-tight tracking-tighter sm:text-4xl">{product.name}</h3>
             <p className="mt-4 max-w-md leading-relaxed text-[#c4cec8]">{product.shortDescription}</p>
             <a
               href={primaryVideo}
               target="_blank"
               rel="noreferrer"
-              className="mt-auto inline-flex items-center gap-1 pt-8 text-sm font-bold text-[#ff977d] underline underline-offset-4 transition hover:text-white"
+              className="mt-auto inline-flex items-center gap-1 pt-8 text-sm font-bold text-[#f0aa98] underline underline-offset-4 transition hover:text-white"
             >
               Assistir no TikTok <ArrowUpRight />
             </a>
@@ -73,7 +73,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
           type="button"
           aria-label="Produto anterior"
           onClick={() => showSlide(activeIndex - 1)}
-          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]"
+          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#c45037] hover:text-[#c45037] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037]"
         >
           ←
         </button>
@@ -85,7 +85,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
               aria-label={`Ir para ${item.name}`}
               aria-current={index === activeIndex ? "true" : undefined}
               onClick={() => showSlide(index)}
-              className={`size-2.5 rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${index === activeIndex ? "bg-[#ff5c35]" : "bg-(--border) hover:bg-[#ff977d]"}`}
+              className={`size-2.5 rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037] ${index === activeIndex ? "bg-[#c45037]" : "bg-(--border) hover:bg-[#f0aa98]"}`}
             />
           ))}
         </div>
@@ -93,7 +93,7 @@ export default function VideoCarousel({ products }: VideoCarouselProps) {
           type="button"
           aria-label="Próximo produto"
           onClick={() => showSlide(activeIndex + 1)}
-          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#ff5c35] hover:text-[#ff5c35] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]"
+          className="grid size-11 place-items-center rounded-full border border-(--border) text-xl transition hover:border-[#c45037] hover:text-[#c45037] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037]"
         >
           →
         </button>

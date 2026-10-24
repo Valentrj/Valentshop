@@ -44,9 +44,9 @@ export default function ProductFilterGrid({ products }: ProductFilterGridProps) 
     <>
       <div className="mt-8 grid gap-3 sm:grid-cols-[1fr_auto]">
         <label className="sr-only" htmlFor="product-search">Buscar produto</label>
-        <input id="product-search" type="search" value={query} onChange={(event) => { setQuery(event.target.value); updateFilters({ search: event.target.value }); }} placeholder="Buscar produto ou categoria" className="w-full rounded-full border border-(--border) bg-(--card) px-5 py-3 text-sm text-(--ink) outline-none placeholder:text-(--muted) focus:border-[#ff5c35] focus:ring-2 focus:ring-[#ff5c35]/20" />
+        <input id="product-search" type="search" value={query} onChange={(event) => { setQuery(event.target.value); updateFilters({ search: event.target.value }); }} placeholder="Buscar produto ou categoria" className="w-full rounded-full border border-(--border) bg-(--card) px-5 py-3 text-sm text-(--ink) outline-none placeholder:text-(--muted) focus:border-[#c45037] focus:ring-2 focus:ring-[#c45037]/20" />
         <label className="sr-only" htmlFor="product-order">Ordenar produtos</label>
-        <select id="product-order" value={selectedOrder} onChange={(event) => updateFilters({ order: event.target.value })} className="rounded-full border border-(--border) bg-(--card) px-5 py-3 text-sm font-bold text-(--ink) outline-none focus:border-[#ff5c35]">
+        <select id="product-order" value={selectedOrder} onChange={(event) => updateFilters({ order: event.target.value })} className="rounded-full border border-(--border) bg-(--card) px-5 py-3 text-sm font-bold text-(--ink) outline-none focus:border-[#c45037]">
           <option value="recentes">Mais recentes</option><option value="az">A–Z</option>
         </select>
       </div>
@@ -57,7 +57,7 @@ export default function ProductFilterGrid({ products }: ProductFilterGridProps) 
             key={category}
             aria-pressed={selectedCategory === category}
             onClick={() => updateFilters({ category })}
-            className={`rounded-full px-4 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${selectedCategory === category ? "bg-[#ff5c35] text-white" : "border border-(--border) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
+            className={`rounded-full px-4 py-2.5 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037] ${selectedCategory === category ? "bg-[#c45037] text-white" : "border border-(--border) text-(--muted) hover:border-[#c45037] hover:text-[#c45037]"}`}
           >
             {categoryLabel(category)}
           </button>

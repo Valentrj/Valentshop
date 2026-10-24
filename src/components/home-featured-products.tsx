@@ -32,7 +32,7 @@ export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsP
             type="button"
             aria-pressed={selectedCategory === category}
             onClick={() => setSelectedCategory(category)}
-            className={`premium-filter rounded-full px-4 py-2.5 text-sm font-bold shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35] ${selectedCategory === category ? "bg-[#ff5c35] text-white shadow-[#ff5c35]/20" : "border border-(--border) bg-(--card) text-(--muted) hover:border-[#ff5c35] hover:text-[#ff5c35]"}`}
+            className={`premium-filter rounded-full px-4 py-2.5 text-sm font-bold shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037] ${selectedCategory === category ? "bg-[#c45037] text-white shadow-[#c45037]/20" : "border border-(--border) bg-(--card) text-(--muted) hover:border-[#c45037] hover:text-[#c45037]"}`}
           >
             {categoryLabel(category)}
           </button>
@@ -46,7 +46,7 @@ export default function HomeFeaturedProducts({ products }: HomeFeaturedProductsP
       </div>
 
       <div className="mt-6 flex justify-end">
-        <Link href="/produtos" className="text-sm font-bold underline underline-offset-4 transition hover:text-[#ff5c35]">
+        <Link href="/produtos" className="text-sm font-bold underline underline-offset-4 transition hover:text-[#c45037]">
           Ver todos os testes
         </Link>
       </div>

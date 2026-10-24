@@ -55,7 +55,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={`Alternar tema. Tema atual: ${isDark ? "escuro" : "claro"}`}
       aria-pressed={isDark}
-      className="grid size-11 place-items-center rounded-full border border-[var(--border)] bg-[var(--card)] text-[var(--ink)] transition-colors duration-200 hover:bg-[#ffe772] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff5c35]"
+      className="grid size-11 place-items-center rounded-full border border-[var(--border)] bg-[var(--card)] text-[var(--ink)] transition-colors duration-200 hover:bg-[#ffe772] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c45037]"
     >
       {isDark ? (
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M20.5 15.4A8.5 8.5 0 0 1 8.6 3.5 8.5 8.5 0 1 0 20.5 15.4Z" /></svg>
